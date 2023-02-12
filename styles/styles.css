@@ -1,0 +1,27 @@
+body {
+   background-color: #ffffff;
+}
+
+.cloud-text {
+    font-weight: 900px;
+    -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+    background-image: url(/styles/black-clouds.jpg);
+    background-size: auto;
+    background-position: 0%;
+    font-size: 40px;
+    text-align: center;
+    animation: cloud-movement infinite 200s;
+    animation-timing-function: linear;
+}
+@keyframes cloud-movement {
+    0% {
+        background-position: 0%;  
+    }
+    50% {
+        background-position: 100%;  
+    }
+    100% {
+        background-position: 0%;
+    }    
+}
