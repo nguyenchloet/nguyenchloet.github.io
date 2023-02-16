@@ -1,10 +1,13 @@
 body {
+    -webkit-text-size-adjust: none;
    background-color: #ffffff;
+   display: block;
 }
 
+/* moving cloud img behind text animation */
 .cloud-text {
     font-weight: 900px;
-    -webkit-background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
     background-image: url(/styles/black-clouds.jpg);
     background-size: auto;
@@ -24,4 +27,142 @@ body {
     100% {
         background-position: 0%;
     }    
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+.project-container {
+    border: 1px solid black;
+}
+
+.project-container {
+    width: 65%;
+}
+
+h2 {
+    font-size: 20px;
+}
+.graph-container {
+    width: 35%;
+    max-height: 25em;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/* radial chart */
+.computer-language-radial-chart {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 1px;
+}
+
+.outer {
+    height:65px;
+    width: 65px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.15), 2px 2px 4px 1px rgba(255,255,255,0.7);
+}
+
+.inner {
+    height:50px;
+    width: 50px;
+    margin: 6px 6px;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px -1px rgba(0,0,0,0.5), inset -1px -1px 2px -1px rgba(255,255,255,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+h3 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+circle {
+    fill: none;
+    stroke-width: 7px;
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+}
+.circle-cpp {
+    animation: radialanimationcpp 2s linear forwards;
+}
+#circle-c {
+    animation: radialanimationc 2s linear forwards;
+}
+#circle-java {
+    animation: radialanimationjava 2s linear forwards;
+}
+.circle-js {
+    animation: radialanimationjs 2s linear forwards;
+}
+#circle-py {
+    animation: radialanimationpy 2s linear forwards;
+}
+.circle-sql {
+    animation: radialanimationsql 2s linear forwards;
+}
+#circle-html {
+    animation: radialanimationhtml 2s linear forwards;
+}
+#circle-css {
+    animation: radialanimationcss 2s linear forwards;
+}
+@keyframes  radialanimationcpp {
+    100% {
+        stroke-dashoffset: 220;
+    }
+}
+@keyframes  radialanimationc {
+    100% {
+        stroke-dashoffset: 270;
+    }
+}
+@keyframes  radialanimationjava {
+    100% {
+        stroke-dashoffset: 240;
+    }
+}
+@keyframes  radialanimationjs {
+    100% {
+        stroke-dashoffset: 280;
+    }
+}
+@keyframes  radialanimationpy {
+    100% {
+        stroke-dashoffset: 230;
+    }
+}
+@keyframes  radialanimationsql {
+    100% {
+        stroke-dashoffset: 250;
+    }
+}
+@keyframes  radialanimationhtml {
+    100% {
+        stroke-dashoffset: 195;
+    }
+}
+@keyframes  radialanimationcss {
+    100% {
+        stroke-dashoffset: 190;
+    }
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
