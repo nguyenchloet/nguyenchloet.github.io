@@ -32,6 +32,14 @@ body {
 .container {
     width: 100%;
     display: flex;
+    flex-direction: column;
+}
+/* room for footer calculated in min-height */
+.main-container {
+    width: 100%;
+    min-height: calc(85vh - 50px);
+    display: flex;
+    flex-direction: row;
 }
 .project-container {
     border: 1px solid black;
@@ -48,9 +56,10 @@ h2 {
     width: 35%;
     max-height: 25em;
     display: flex;
-    align-content: flex-start;
+    align-content: flex-end;
     flex-direction: column;
     flex-wrap: wrap;
+    padding-right: 5%;
 }
 
 /* radial chart */
