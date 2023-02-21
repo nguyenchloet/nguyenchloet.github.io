@@ -41,6 +41,8 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+/* left project panel */
 .project-container {
     width: 65%;
     display: flex;
@@ -53,6 +55,24 @@ body {
     color:#000000;
     padding: 5px 5px;
 }
+
+h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#projects-ul {
+    display: none;
+    list-style: none;
+}
+
+button {
+    display: absolute;
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+/* right graph panel */
 .graph-container {
     width: 35%;
     max-height: 25em;
@@ -96,7 +116,7 @@ body {
     text-align: center;
 }
 
-h3 {
+h4 {
     font-size: 15px;
     font-weight: 600;
 }
@@ -163,12 +183,12 @@ circle {
 }
 @keyframes  radialanimationhtml {
     100% {
-        stroke-dashoffset: 180;
+        stroke-dashoffset: 190;
     }
 }
 @keyframes  radialanimationcss {
     100% {
-        stroke-dashoffset: 190;
+        stroke-dashoffset: 200;
     }
 }
 

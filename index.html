@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/styles.css">
-        <script defer src="progress_bar.js"></script>
+        <script defer src="index.js"></script>
     </head>
     <body>
         <h1 class="cloud-text">Chloé Nguyen</h1>
@@ -10,16 +10,64 @@
             <div class="main-container">
                 <div class="project-container">
                     <h2>projects</h2>
+                    <div>
+                        <div>Workout Log</div>
+                        <div>
+                            <a href="https://github.com/nguyenchloet/Exercise-Log">v1 (HTML/CSS/JAVASCRIPT)</a><br>
+                            <a href="https://github.com/nguyenchloet/Exercise-Log-With-Database">v2 (XAMPP - MySQL DB/Apache Server)</a>
+                        </div>
+                    </div>
+                    <div><a href="">Text Abuse Documentation App Login UI (SWIFT)</a></div>
                     <div><a href="/claudescookbook/index.html">Claude's Cookbook</a></div>
+                    <br>
+                    <h2>coding projects (teaching material)</h2>
+                    
+
+                    <div id="projects">
+                        <button type="button" onclick="showLinks(id)" id="1">C++ Projects</button>
+                        <ul id="projects-ul" class="project-list">
+                            <li><a href="https://github.com/nguyenchloet/CaesarsCipherCpp">Caesar's Shift Cipher Encryption/Decryption/Brute-Force Solution</a></li>
+                            <li><a href="https://github.com/nguyenchloet/2048Game">2048 Console Game</a></li>
+                            <li><a href="https://github.com/nguyenchloet/Mastermind/blob/main/README.md">Mastermind Console Game</a></li>
+                            <li><a href="https://github.com/nguyenchloet/Sphynx/blob/main/sphynx.cpp">Sphynx Questions Console Game</a></li>
+                            <li><a href="https://github.com/nguyenchloet/TicTacToe">TicTacToe Console Game</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="projects" class="java-projects">
+                        <button type="button" onclick="showLinks(id)" id="2">Java Projects</button>
+                        <ul id="projects-ul" class="project-list">
+                            <li><a href="https://github.com/nguyenchloet/MySpecificAge">Calculate Age to the Second</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="projects" class="py-projects">
+                        <button type="button" onclick="showLinks(id)" id="3">Python Projects</button>
+                        <ul id="projects-ul" class="project-list">
+                            <li><a href="https://github.com/nguyenchloet/PY">Python Github Repository</a></li>
+                        </ul>
+                    </div>
+
+                   
+                    
+
+                    <div>
+                        <h3>block-based code</h3>
+                        <div><a href="https://scratch.mit.edu/users/cnguyen_tcs/">Scratch.mit.edu</a></div>
+                        <!-- <div><a href="https://studio.code.org/projects/artist/WSI05F9iBAjGi-ryKPlMFl5b1KEYew1ZZDoTsk31F28/edit">Code.org</a></div> -->
+                    </div>
+                    
+
+
                 </div>
                 <div class="graph-container">
                     <!-- CPP GRAPH -->
                     <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name">
+                                <h4 id="language-name">
                                     C++
-                                </h3>
+                                </h4>
                             </div>
                         </div>
     
@@ -38,9 +86,9 @@
                      <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name">
+                                <h4 id="language-name">
                                     C
-                                </h3>
+                                </h4>
                             </div>
                         </div>
     
@@ -58,9 +106,9 @@
                      <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name">
+                                <h4 id="language-name">
                                     Python
-                                </h3>
+                                </h4>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="85px" height="85px">
@@ -77,9 +125,9 @@
                     <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name">
+                                <h4 id="language-name">
                                     Java
-                                </h3>
+                                </h4>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="85px" height="85px">
@@ -96,9 +144,9 @@
                       <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name js">
+                                <h4 id="language-name js">
                                     JS
-                                </h3>
+                                </h4>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="85px" height="85px">
@@ -115,9 +163,9 @@
                      <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name">
+                                <h4 id="language-name">
                                     SQL
-                                </h3>
+                                </h4>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="85px" height="85px">
@@ -134,9 +182,9 @@
                      <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name">
+                                <h4 id="language-name">
                                     HTML                            
-                                </h3>
+                                </h4>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="85px" height="85px">
@@ -153,9 +201,9 @@
                     <div class="computer-language-radial-chart">
                         <div class="outer">
                             <div class="inner">
-                                <h3 id="language-name">
+                                <h4 id="language-name">
                                     CSS                            
-                                </h3>
+                                </h4>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="85px" height="85px">
@@ -168,11 +216,17 @@
                             <circle class="circle-css" id="circle-css" stroke="url(#GradientColorHTML)" cx="41" cy="41" r="29" stroke-linecap="round" />
                         </svg>
                     </div>
+                    <!--
+                    <div><em>In progress:</em>
+                        <div>Ruby</div>
+                        <div>Rust</div>
+                    </div>
+                    -->
                 </div> <!-- end graph container -->
             </div>
             <footer>
                 <address><a href="mailto:nguyenchloet@gmail.com">nguyenchloet@gmail.com</a><tel>(971) 204-5202</tel></address>
-                <cp><h4>CTN &copy 2023</h4></cp>
+                <cp><h5>CTN &copy 2023</h5></cp>
             </footer>
         </body>
 </html>
