@@ -42,24 +42,26 @@ body {
     flex-direction: row;
 }
 .project-container {
-    border: 1px solid black;
-}
-
-.project-container {
     width: 65%;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    text-align: center;
 }
-
-h2 {
+.project-container h2 {
     font-size: 20px;
+    color:#000000;
+    padding: 5px 5px;
 }
 .graph-container {
     width: 35%;
     max-height: 25em;
     display: flex;
-    align-content: flex-end;
-    flex-direction: column;
+    align-content: flex-start;
+    flex-direction: row;
     flex-wrap: wrap;
-    padding-right: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 /* radial chart */
@@ -95,7 +97,7 @@ h2 {
 }
 
 h3 {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
 }
 
@@ -146,7 +148,7 @@ circle {
 }
 @keyframes  radialanimationjs {
     100% {
-        stroke-dashoffset: 280;
+        stroke-dashoffset: 255;
     }
 }
 @keyframes  radialanimationpy {
@@ -161,7 +163,7 @@ circle {
 }
 @keyframes  radialanimationhtml {
     100% {
-        stroke-dashoffset: 195;
+        stroke-dashoffset: 180;
     }
 }
 @keyframes  radialanimationcss {
