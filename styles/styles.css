@@ -14,7 +14,7 @@ body {
     background-position: 0%;
     font-size: 40px;
     text-align: center;
-    animation: cloud-movement infinite 200s;
+    animation: cloud-movement infinite 250s;
     animation-timing-function: linear;
 }
 @keyframes cloud-movement {
@@ -39,26 +39,83 @@ body {
     width: 100%;
     min-height: calc(85vh - 50px);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* unvisited link */
+a:link {
+    color: blue;
+    text-decoration: none;
+  }
+  
+/* visited link */
+a:visited {
+    color: purple;
+}
+  
+/* mouse over link */
+a:hover {
+    color: black;
+}
+  
+/* selected link */
+a:active {
+    color: green;
 }
 
 /* left project panel */
 .project-container {
-    width: 65%;
+    width: 100%;
     display: flex;
-    align-content: flex-start;
     flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 .project-container h2 {
     font-size: 20px;
-    color:#000000;
     padding: 5px 5px;
 }
 
 h3 {
     font-size: 17px;
     margin-bottom: 5px;
+}
+
+.teaching-projects-div {
+    width: 65%;
+    border: 4px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    padding-bottom: 4%;
+}
+
+.personal-projects-div {
+    width: 80%;
+    border: 4px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4%;
+
+}
+
+.wol {
+    display: flex;
+    flex-direction: row;
+}
+
+.wol div {    
+    padding-left: 12px;
+}
+
+.wol h4 {
+    font-weight: 500;
+}
+
+.wol-links {
+    padding-top: 9px;
+    text-align: left;
 }
 
 #projects-ul {
@@ -74,16 +131,23 @@ button {
 
 /* right graph panel */
 .graph-container {
-    width: 35%;
-    max-height: 25em;
     display: flex;
-    align-content: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 1%;
-    padding-right: 1%;
+    flex-direction: column;
+    margin-top: 5%; 
 }
 
+.row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#web-dev-languages {
+    width: 85%;
+    margin-left: 8%;
+    justify-content: space-evenly;
+}
 /* radial chart */
 .computer-language-radial-chart {
     width: 80px;
@@ -151,6 +215,12 @@ circle {
 #circle-css {
     animation: radialanimationcss 2s linear forwards;
 }
+#circle-bootstrap {
+    animation: radialanimationbootstrap 2s linear forwards;
+}
+#circle-git {
+    animation: radialanimationgit 2s linear forwards;
+}
 @keyframes  radialanimationcpp {
     100% {
         stroke-dashoffset: 220;
@@ -189,6 +259,16 @@ circle {
 @keyframes  radialanimationcss {
     100% {
         stroke-dashoffset: 200;
+    }
+}
+@keyframes  radialanimationbootstrap {
+    100% {
+        stroke-dashoffset: 250;
+    }
+}
+@keyframes  radialanimationgit {
+    100% {
+        stroke-dashoffset: 230;
     }
 }
 
