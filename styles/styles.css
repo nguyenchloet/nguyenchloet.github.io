@@ -37,7 +37,7 @@ body {
 /* room for footer calculated in min-height */
 .main-container {
     width: 100%;
-    min-height: calc(85vh - 50px);
+    min-height: calc(75vh - 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,17 +64,17 @@ a:active {
     color: green;
 }
 
-/* left project panel */
+/* project panel */
 .project-container {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: start;
     text-align: center;
+    justify-content: space-evenly;
 }
 .project-container h2 {
     font-size: 20px;
-    padding: 5px 5px;
 }
 
 h3 {
@@ -83,21 +83,23 @@ h3 {
 }
 
 .teaching-projects-div {
-    width: 65%;
+    height: auto;
+    width: 45%;
     border: 4px solid rgb(220, 220, 220);
     border-radius: 10px;
-    padding-bottom: 4%;
+    padding-bottom: 3%;
 }
 
 .personal-projects-div {
-    width: 80%;
+    height: auto;
+    width: 45%;
     border: 4px solid rgb(220, 220, 220);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    vertical-align: middle;
     align-items: center;
-    padding-bottom: 4%;
-
+    padding-bottom: 5%;
 }
 
 .wol {
@@ -129,11 +131,11 @@ button {
     margin-bottom: 5px;
 }
 
-/* right graph panel */
+/* graph panel */
 .graph-container {
     display: flex;
     flex-direction: column;
-    margin-top: 5%; 
+    margin-top: 2%; 
 }
 
 .row {
