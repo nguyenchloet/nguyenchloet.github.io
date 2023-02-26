@@ -22,8 +22,7 @@ h1 {
 #sketch {
     display: flex;
     justify-content: right;
-    padding-top: 5%;
-    padding-right: 5%;
+    padding: 5% 5%;
 }
 
 img {
@@ -44,9 +43,15 @@ a {
     -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: #ccb299;
 }
+
+a:hover {
+    -webkit-filter: brightness(125%);
+}
 #left {
     width: 35%;
     height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 #right {
@@ -64,3 +69,14 @@ p {
     margin-left: 5%;
     border-radius: 4px;
 }
+
+@media (max-width: 600px) {
+    body {
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+    img {
+        max-width: 250px;
+    }
+  }
