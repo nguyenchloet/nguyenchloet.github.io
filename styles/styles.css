@@ -12,7 +12,6 @@ body {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
       -webkit-text-stroke-width: .25px;
-        -webkit-text-stroke-color: #bdbdbd;
     background-image: url(/styles/black-clouds.jpg);
     background-size: auto;
     background-position: 0%;
@@ -20,7 +19,15 @@ body {
     text-align: center;
     animation: cloud-movement infinite 50s;
     animation-timing-function: linear;
+    border: 4px solid transparent;
+    border-image: radial-gradient(circle, rgb(120, 120, 120) 33%, rgba(255,255,255,1)100%) 20;
+    border-top: hidden;
+    border-right: hidden;
+    border-left: hidden;
+    padding: 10px 10px;
+    margin: 20px 10px;
 }
+
 @keyframes cloud-movement {
     0% {
         background-position: 100%;  
@@ -251,17 +258,35 @@ footer {
     display: flex;
     max-width: 100%;
     min-height: 2.5rem;
-    justify-content: space-around;
-    font-size: 12px;
-    align-self: flex-end;
+    justify-content: center;
 }
 
 address, cp {
+    font-size: 12px;
     display: inline-flex;
     align-self: center;
     padding-left: 20px;
 }
 
+address a {
+  color: #000000;
+}
+
+address a:visited {
+  color: #000000;
+}
+
+address a:link {
+  color: #000000;
+}
+
+address a:hover {
+  color: #EEEEEE;
+  background-color: transparent;
+}
+
+
 tel {
     padding-left: 20px;
 }
+
