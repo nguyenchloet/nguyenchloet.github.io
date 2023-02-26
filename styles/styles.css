@@ -1,7 +1,9 @@
 body {
+    display: flex;
+    flex-direction: column;
     -webkit-text-size-adjust: none;
    background-color: #ffffff;
-   display: block;
+   background: linear-gradient(145deg, #4F7CFE 0%,#800080 100%); 
 }
 
 /* moving cloud img behind text animation */
@@ -9,39 +11,41 @@ body {
     font-weight: 900px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
+      -webkit-text-stroke-width: .25px;
+        -webkit-text-stroke-color: #bdbdbd;
     background-image: url(/styles/black-clouds.jpg);
     background-size: auto;
     background-position: 0%;
     font-size: 40px;
     text-align: center;
-    animation: cloud-movement infinite 250s;
+    animation: cloud-movement infinite 50s;
     animation-timing-function: linear;
 }
+
 @keyframes cloud-movement {
     0% {
-        background-position: 0%;  
-    }
-    50% {
         background-position: 100%;  
     }
+    50% {
+        background-position: 50%;  
+    }
     100% {
-        background-position: 0%;
+        background-position: 25%;
     }    
 }
 
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
 }
-/* room for footer calculated in min-height */
+
 .main-container {
-    width: 100%;
-    min-height: calc(75vh - 50px);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 75vh;
+    padding-bottom: 2.5rem;
 }
+
 a {
     padding: 0 10px;
 }
@@ -53,7 +57,7 @@ a:link {
   
 /* visited link */
 a:visited {
-    color: purple;
+    color: #800080;
 }
   
 /* mouse over link */
@@ -70,11 +74,13 @@ a:active {
 /* project panel */
 .project-container {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: start;
     text-align: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .project-container h2 {
     font-size: 20px;
@@ -86,7 +92,7 @@ h3 {
 }
 
 .teaching-projects-div {
-    height: auto;
+    background-color: #FFFFFF;
     width: 45%;
     border: 4px solid #DCDCDC;
     border-radius: 10px;
@@ -94,8 +100,8 @@ h3 {
 }
 
 .personal-projects-div {
-    height: auto;
-    width: 45%;
+    width: 50%;
+    background-color: #FFFFFF;
     border: 4px solid #DCDCDC;
     border-radius: 10px;
     display: flex;
@@ -103,6 +109,12 @@ h3 {
     vertical-align: middle;
     align-items: center;
     padding-bottom: 5%;
+}
+
+#img-link a:hover {
+    height: 100px;
+    background-color: transparent;
+    -webkit-filter: brightness(150%);
 }
 
 .wol {
@@ -233,172 +245,21 @@ button {
   .btn span:hover:after {
     width: 100%;
   }
-  
-
-/* graph panel */
-.graph-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2%; 
-}
-
-.row {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-#web-dev-languages {
-    width: 85%;
-    margin-left: 8%;
-    justify-content: space-evenly;
-}
-/* radial chart */
-.computer-language-radial-chart {
-    width: 80px;
-    height: 80px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1px 1px;
-}
-
-.outer {
-    height:65px;
-    width: 65px;
-    border-radius: 50%;
-    box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.15), 2px 2px 4px 1px rgba(255,255,255,0.7);
-}
-
-.inner {
-    height:50px;
-    width: 50px;
-    margin: 6px 6px;
-    border-radius: 50%;
-    box-shadow: inset 1px 1px 2px -1px rgba(0,0,0,0.5), inset -1px -1px 2px -1px rgba(255,255,255,0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-}
-
-h4 {
-    font-size: 15px;
-    font-weight: 600;
-}
-
-circle {
-    fill: none;
-    stroke-width: 7px;
-    stroke-dasharray: 360;
-    stroke-dashoffset: 360;
-}
-.circle-cpp {
-    animation: radialanimationcpp 2s linear forwards;
-}
-#circle-c {
-    animation: radialanimationc 2s linear forwards;
-}
-#circle-java {
-    animation: radialanimationjava 2s linear forwards;
-}
-.circle-js {
-    animation: radialanimationjs 2s linear forwards;
-}
-#circle-py {
-    animation: radialanimationpy 2s linear forwards;
-}
-.circle-sql {
-    animation: radialanimationsql 2s linear forwards;
-}
-#circle-html {
-    animation: radialanimationhtml 2s linear forwards;
-}
-#circle-css {
-    animation: radialanimationcss 2s linear forwards;
-}
-#circle-bootstrap {
-    animation: radialanimationbootstrap 2s linear forwards;
-}
-#circle-git {
-    animation: radialanimationgit 2s linear forwards;
-}
-@keyframes  radialanimationcpp {
-    100% {
-        stroke-dashoffset: 220;
-    }
-}
-@keyframes  radialanimationc {
-    100% {
-        stroke-dashoffset: 270;
-    }
-}
-@keyframes  radialanimationjava {
-    100% {
-        stroke-dashoffset: 240;
-    }
-}
-@keyframes  radialanimationjs {
-    100% {
-        stroke-dashoffset: 255;
-    }
-}
-@keyframes  radialanimationpy {
-    100% {
-        stroke-dashoffset: 230;
-    }
-}
-@keyframes  radialanimationsql {
-    100% {
-        stroke-dashoffset: 250;
-    }
-}
-@keyframes  radialanimationhtml {
-    100% {
-        stroke-dashoffset: 190;
-    }
-}
-@keyframes  radialanimationcss {
-    100% {
-        stroke-dashoffset: 200;
-    }
-}
-@keyframes  radialanimationbootstrap {
-    100% {
-        stroke-dashoffset: 250;
-    }
-}
-@keyframes  radialanimationgit {
-    100% {
-        stroke-dashoffset: 230;
-    }
-}
-
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
 /* footer */
 footer {
+    display: flex;
     max-width: 100%;
-    height: 50px;
+    min-height: 2.5rem;
+    justify-content: space-around;
     font-size: 12px;
-    display: inline-flex;
-    flex-direction: row;
-    align-self: center;
+    align-self: flex-end;
 }
 
 address, cp {
     display: inline-flex;
     align-self: center;
     padding-left: 20px;
-
 }
 
 tel {
