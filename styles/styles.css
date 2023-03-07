@@ -264,6 +264,12 @@ button {
   width: 100%;
 }
 
+/* skills container */
+.skills {
+    display: flex;
+    flex-direction: row;
+}
+
 /* footer */
 footer {
     display: flex;
@@ -295,7 +301,6 @@ address a:hover {
   color: #EEEEEE;
   background-color: transparent;
 }
-
 
 tel {
     padding-left: 20px;
