@@ -79,10 +79,14 @@ ul .list {
 .list li {
     height: auto;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     text-align: left;
     padding-top: 2px;
-    flex-wrap: wrap;
     margin-left: -30px;
+    overflow-wrap: break-word;
+    list-style-position: inside;
+
 }
 
 .list li:first-child {
@@ -93,6 +97,10 @@ ul .list {
     padding-bottom: 8px;
 }
 
+.list li input {
+    overflow-wrap: break-word;
+}
+
 .directions-list .direction{
     text-align: left;
     display: list-item;
@@ -100,7 +108,65 @@ ul .list {
     list-style-position: inside;
     padding-left: 10px;
 }
+li.ingredient {
+    display: inline;
+}
+
+li.ingredient span {
+    padding-right: 3px;
+}
+
+.ingredient-amount {
+    display: none;
+}
 
 input[type="checkbox"] {
     background-color: blue;
+}
+
+#og-yield {
+    display: none;
+}
+
+.yield-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.value-button {
+    display: inline-block;
+    background: #bfbfbf;
+    border: 1px solid black;
+    width: 25px;
+    height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2px;
+ 
+}
+
+.value-button#decrease {
+    margin-left: 10px;
+
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+form #yield {
+    width: auto;
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    min-width: 30px;
+    max-width: 50px;
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
