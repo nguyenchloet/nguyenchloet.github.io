@@ -1,3 +1,27 @@
+// variable for original yield values
+//const ogYield = parseInt(document.getElementById('og-yield').value, 10);
+const ogYields = document.getElementsByClassName('og-yield');
+var currentYields = document.getElementsByClassName('yield-output');
+
+// get ingredient value (hidden) 
+var ingredientAmountList = document.getElementsByClassName('ingredient-amount');
+
+// get output ingredient span
+var outputAmountList = document.getElementsByClassName('output-amount');
+var index = 0;
+
+// get ingredient values on page load
+window.onload = function() {
+  // set current yield on load
+  for (var i = 0; i < currentYields.length; i++ ) {
+    currentYields[i].innerHTML = ogYields[i].innerHTML;
+  }
+
+  for (var i = 0; i < outputAmountList.length; i++) {
+    outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML;
+  }
+}
+
 // allow scroll through recipes
 var prev = $('.prev');
 var next = $('.next');
@@ -6,80 +30,83 @@ var recipes = $('.recipe-item');
 // set first recipe as active
 $('.recipes li:first').addClass('active');
 
+
 // show one recipe (specified node) at a time
 function show( node ){
   node.addClass('active') 
       // hide previously active node
-      .siblings().removeClass('active'); 
+      .siblings().removeClass('active');
+ 
 }
 
+// show previous recipe
 prev.on('click', function(e){
   // prevent scrolling to top
   e.preventDefault(); 
 
   var previousNode = recipes.filter('.active').prev();
   show(previousNode);
+  index > 0 ? index-- :  0;
+
+  // refresh values to original yield when previous recipe shown
+  for (var i = 0; i < outputAmountList.length; i++) {
+    outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML;
+  }
 });
+
+// show next recipe
 next.on('click', function(e){
   // prevent scrolling to top
   e.preventDefault(); 
   var nextNode = recipes.filter('.active').next();
   show(nextNode);
+  index < ogYields.length - 1 ? index++ : 0;
+
+  // refresh values to original yield when next recipe shown
+  for (var i = 0; i < outputAmountList.length; i++) {
+    outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML;
+  }
 });
 
 
 
-// variable for original yield val
-const ogYield = parseInt(document.getElementById('og-yield').value, 10);
-
-// get ingredient value (hidden) 
-var ingredientAmount = document.getElementsByClassName('ingredient-amount');
-
-// get output ingredient span
-var outputAmountList = document.getElementsByClassName('output-amount');
-
-
-// get ingredient values on page load
-window.onload = function() {
-  for (var i = 0; i < outputAmountList.length; i++) {
-    outputAmountList[i].innerHTML = ingredientAmount[i].innerHTML;
-  }
-}
-
 // update yield based on click (step up)
 function increaseYield() {
-  var value = parseInt(document.getElementById('yield').value, 10);
-  value = isNaN(value) ? 1 : value;
-  value++;
+  var currentYield = Number(currentYields[index].innerHTML);
+  currentYield = isNaN(currentYield) ? 1 : currentYield;
+  currentYield++;
+  // save new value
+  currentYields[index].innerHTML = currentYield;
 
-  document.getElementById('yield').value = value;
+  //console.log("current yield:",currentYields);
   // if yield increases and is not equal to original yield, update yield by (currentYield/ogYield * amount)
   for (var i = 0; i < outputAmountList.length; i++) {
-    if (ingredientAmount[i].innerHTML == "a") {
-      ingredientAmount[i].innerHTML = 1;
-      outputAmountList[i].innerHTML = ingredientAmount[i].innerHTML; 
+    if (ingredientAmountList[i].innerHTML == "a") {
+      ingredientAmountList[i].innerHTML = 1;
+      outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML; 
     } 
-    outputAmountList[i].innerHTML = value/ogYield * ingredientAmount[i].innerHTML;
+    outputAmountList[i].innerHTML = currentYield/ogYields[index].innerHTML * ingredientAmountList[i].innerHTML;
   }
 }
 
 // update yield based on click (step down)
 function decreaseYield() {
-  var value = parseInt(document.getElementById('yield').value, 10);
-  value = isNaN(value) ? 1 : value;
+  var currentYield = Number(currentYields[index].innerHTML);
+  currentYield = isNaN(currentYield) ? 1 : currentYield;
   // if value less than 1, set to 1 or keep as current value
-  value < 1 ? 1 : value;
+  currentYield < 1 ? 1 : currentYield;
   // only decrease if value is greater than 1 (no zero)
-  value > 1 ? value-- : 1;
+  currentYield > 1 ? currentYield-- : 1;
+  // save new value
+  currentYields[index].innerHTML = currentYield;
   
-  document.getElementById('yield').value = value;
   // if yield increases and is not equal to original yield, update yield by (currentYield/ogYield * amount)
   for (var i = 0; i < outputAmountList.length; i++) {
-    if (ingredientAmount[i].innerHTML == "a") {
-      ingredientAmount[i].innerHTML = 1;
-      outputAmountList[i].innerHTML = ingredientAmount[i].innerHTML; 
+    if (ingredientAmountList[i].innerHTML == "a") {
+      ingredientAmountList[i].innerHTML = 1;
+      outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML; 
     } 
-    outputAmountList[i].innerHTML = value/ogYield * ingredientAmount[i].innerHTML;
+    outputAmountList[i].innerHTML = currentYield/ogYields[index].innerHTML * ingredientAmountList[i].innerHTML;
   }
 }
 

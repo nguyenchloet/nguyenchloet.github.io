@@ -124,7 +124,7 @@ input[type="checkbox"] {
     background-color: blue;
 }
 
-#og-yield {
+.og-yield {
     display: none;
 }
 
@@ -155,7 +155,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-form #yield {
+.yield-output {
     width: auto;
     border: 1px solid black;
     border-left: none;
