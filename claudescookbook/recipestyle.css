@@ -1,5 +1,6 @@
 body {
     width: 100%;
+    background-image: url(img/castiron.jpeg);
 }
 
 header {
@@ -14,17 +15,30 @@ header {
     flex-direction: row;
     list-style: none;
     justify-content: space-between;
+    margin-left: -20px;
     margin-right: 40px;
 }
 
 .nav-ul a {
     text-decoration: none;
-    color: #000;
+    color: #bfbfbf;
+    background: linear-gradient(#fff, #b5a6a5, #bfbfbf, #787d7b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    mix-blend-mode: lighten;
 }
 
 h1 {
+    font-family: "Fasthand", cursive;
+    font-size: 45px;
     text-align: center;
-    margin-top: -10px;
+    color: #bfbfbf;
+    background: linear-gradient(#fff, #b5a6a5, #bfbfbf, #787d7b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    mix-blend-mode: lighten;
+    margin-top: -25px;
+    margin-bottom: 5px;
 }
 
 .button-container {
@@ -36,16 +50,23 @@ h1 {
 }
 
 h2 {
-    margin-top: -10px;
+    font-family: "Fasthand", cursive;
+    font-size: 40px;
+    margin-top: -35px;
+    margin-bottom: 10px;
+
 }
 
 main {
     width: auto;
-    margin-left: -5px;
     border: 1px solid #000;
-    background-image: url(img/paper.jpeg);
-    background-position: -400px;
+    border-radius: 5px;
+    background-image: url(img/paper.png);
+    background-repeat: repeat-x;
+    background-position: -20px;
     background-color: #ffffff;
+    margin-left: -5px;
+    margin-right: 5px;
 }
 
 #recipe-container {
@@ -136,6 +157,10 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.yield-output {
+    background-color: #ffffff;
 }
 
 .value-button {
