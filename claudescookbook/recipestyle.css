@@ -1,6 +1,7 @@
 body {
     width: 100%;
     /* background-image: url(img/castiron.jpeg); */
+    background-color: #000;
 }
 
 header {
@@ -27,7 +28,7 @@ h1 {
     /* font-family: "Fasthand", cursive; */
     text-align: center;
     margin-top: -25px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .button-container {
@@ -49,13 +50,20 @@ main {
     width: auto;
     height: auto;
     border: 1px solid #000;
+    border-radius: 5px;
     background-image: url(img/full_paper.png);
     background-position: -20px;
     background-color: #ffffff;
-    margin-left: -5px;
+    margin-left: 10px;
     margin-right: 10px;
 }
 
+.outline {
+    background-color: #fff;
+    border-radius: 5px;
+    padding-bottom: 10px;
+
+}
 #recipe-container {
     width: 98%;
     height: auto;
