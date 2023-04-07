@@ -47,10 +47,9 @@ h2 {
 
 main {
     width: auto;
+    height: auto;
     border: 1px solid #000;
-    border-radius: 5px;
-    background-image: url(img/paper.png);
-    background-repeat: repeat-x;
+    background-image: url(img/full_paper.png);
     background-position: -20px;
     background-color: #ffffff;
     margin-left: -5px;
