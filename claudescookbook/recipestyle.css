@@ -66,7 +66,7 @@ main {
 }
 
 .outline {
-    background-color: red;
+    background-color: #fff;
     background-image: url(img/full_paper.png);
     border-radius: 5px;
 }
