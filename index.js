@@ -6,8 +6,13 @@ $(document).ready(function(){
    });
  });
 
- // code coach page carousel behavior
+ //dark mode toggle
+ function darkModeToggle() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
 
+ // code coach page carousel behavior
 var slideshowContainers = document.getElementsByClassName("slideshow-container");
 var slideIndex = 0;
 
