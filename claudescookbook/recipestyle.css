@@ -1,7 +1,12 @@
 body {
     width: 100%;
     /* background-image: url(img/castiron.jpeg); */
-    background-color: #000;
+    background-color: #fff;
+    color: #000;
+}
+
+a {
+    color: #000;
 }
 
 header {
@@ -26,11 +31,12 @@ header {
 
 h1 {
     /* font-family: "Fasthand", cursive; */
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 62px;
     text-align: center;
-    color: #bfbfbf;
-    margin-top: -25px;
+    margin-top: -5px;
     margin-bottom: 25px;
-    -webkit-text-stroke: .75px black;
+    /*-webkit-text-stroke: .75px black;*/
 }
 
 .button-container {
@@ -38,7 +44,14 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     padding: 20px 10px;
-    margin-left: 5px;
+    margin: 10px 10px -20px 10px;
+}
+
+.button-container button {
+    background-color: #bfbfbf;
+    border-radius: 10px;
+    padding: 5px 12px;
+    color: #000;
 }
 
 h2 {
@@ -69,6 +82,9 @@ main {
     background-color: #fff;
     background-image: url(img/full_paper.png);
     border-radius: 5px;
+    margin-top: -10px;
+    margin-left: -10px;
+
 }
 
 #recipe-container {
@@ -160,22 +176,19 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-.yield-output {
-    padding-top: 2px;
-    background-color: #ffffff;
+    
 }
 
 .value-button {
     display: inline-block;
     background: #bfbfbf;
-    border: 1px solid black;
+    border: 2px solid black;
     width: 25px;
     height: 22px;
     text-align: center;
     vertical-align: middle;
     padding-top: 2px;
+    border-radius: 4px;
  
 }
 
@@ -190,12 +203,11 @@ input[type="checkbox"] {
 
 .yield-output {
     width: auto;
-    border: 1px solid black;
-    border-left: none;
-    border-right: none;
     min-width: 30px;
     max-width: 50px;
     text-align: center;
+    padding-top: 4px;
+    background-color: #ffffff;
 }
 
 input[type=number]::-webkit-inner-spin-button,
