@@ -39,7 +39,7 @@ h1 {
     /*-webkit-text-stroke: .75px black;*/
 }
 
-.button-container {
+.buttons-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -47,11 +47,80 @@ h1 {
     margin: 10px 10px -20px 10px;
 }
 
-.button-container button {
-    background-color: #bfbfbf;
-    border-radius: 10px;
-    padding: 5px 12px;
-    color: #000;
+.arrow{
+    cursor: pointer;
+    position:relative;
+    display:block;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    border: solid 3px #999;
+    background-color: #fff;
+    border-radius: 100%;
+    z-index: 1;
+    transition: all .2s linear;
+}
+
+.left.arrow:before {
+    content:"";
+    position: absolute;
+    width:35%;
+    height: 10%;
+    top:41%;
+    left:45%;
+    background: #999;
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: all .1s linear;
+}
+
+.left.arrow:after {
+    content:"";
+    position: absolute;
+    width:35%;
+    height: 10%;
+    z-index: 3;
+    top:59%;
+    left:45%;
+    background: #999;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.right.arrow:before {
+    content:"";
+    position: absolute;
+    width:35%;
+    height: 10%;
+    top:41%;
+    left:55%;
+    background: #999;
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all .1s linear;
+}
+
+.right.arrow:after {
+    content:"";
+    position: absolute;
+    width:35%;
+    height: 10%;
+    z-index: 3;
+    top:59%;
+    left:55%;
+    background: #999;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.arrow:hover {
+    border: solid 4px #000;
+}
+
+.arrow:hover:before {
+    background: #000;
+}
+
+.arrow:hover:after {
+    background: #000;
 }
 
 h2 {
