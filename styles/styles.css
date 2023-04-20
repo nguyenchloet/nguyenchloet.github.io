@@ -6,13 +6,12 @@ body {
   display: flex;
   height: auto;
   width: auto;
-    flex-direction: column;
-    -webkit-text-size-adjust: none;
-   background-color: #ffffff;
-   color: #000;
-   /* background: linear-gradient(145deg, #4F7CFE 0%,#800080 100%); */
-   font-family: 'Heebo', sans-serif;
-}
+  flex-direction: column;
+  -webkit-text-size-adjust: none;
+  background-color: #ffffff;
+  color: #000;
+  /* background: linear-gradient(145deg, #4F7CFE 0%,#800080 100%); */
+  }
 
 h1 {
   text-align: center;
@@ -23,14 +22,14 @@ a {
 }
 /* moving cloud img behind text animation */
 .cloud-text {
-    font-weight: 900px;
+    font-family: 'Passion One', cursive;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
-      -webkit-text-stroke-width: .05px;
+      -webkit-text-stroke-width: .1px;
     background-image: url(/styles/black-clouds.jpg);
     background-size: auto;
     background-position: 0%;
-    font-size: 45px;
+    font-size: 80px;
     text-align: center;
     animation: cloud-movement infinite 50s;
     animation-timing-function: linear;
@@ -40,11 +39,13 @@ a {
     border-left: hidden;
     padding: 0 10px;
     margin: 20px 10px 0 10px;
+    letter-spacing: 1px;
 }
 
 .small-cloud {
   text-align: left;
   font-size: 30px;
+  margin-top: -20px;
 }
 
 @keyframes cloud-movement {
@@ -65,7 +66,6 @@ a {
     width: 100%;
     padding-bottom: 2.5rem;
     flex-direction: column;
-    align-items: center;
 }
 
 header {
@@ -83,7 +83,7 @@ nav {
 }
 
 nav a {
-  padding: 4px 20px;
+  padding: 0 20px;
   text-decoration: none;
   box-shadow: inset 0 0 0 0 silver;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
@@ -129,10 +129,11 @@ nav button {
 #main-page {
   display: flex;
   flex-direction: column;
-  height: 55vh;
+  height: 80vh;
   width: 100%;
   align-items: center;
-  padding-top: 20%;
+  vertical-align: middle;
+  padding-top: 75px;
 }
 
 
@@ -233,10 +234,10 @@ nav button {
   display: flex;
   flex-direction: column;
   width: 45vh;
-  height: 38vh;
+  height: 35vh;
   border-radius: 10px;
   text-align: center;
-  margin: 0 0 4% 0;
+  margin: 1% 0;
   padding: 2%;
 }
 
@@ -260,13 +261,14 @@ nav button {
   flex-direction: row;
   list-style: none;
   justify-content: space-evenly;
-  margin: 0 0;
+  margin: -4px 0 0 0;
   padding: 2px 0;
   font-size: 12px;
 }
 
 #project-item-description {
   margin-top: 2px;
+  margin-bottom: 4px;
   padding: 2px 0;
   min-height: 55px;
   max-height: 55px;
