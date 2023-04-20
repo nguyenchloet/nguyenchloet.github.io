@@ -17,6 +17,10 @@ body {
 h1 {
   text-align: center;
 }
+
+a {
+  color: inherit;
+}
 /* moving cloud img behind text animation */
 .cloud-text {
     font-weight: 900px;
@@ -73,7 +77,6 @@ header {
 }
 
 nav {
-  width: 100vh;
   display: flex;
   margin-right: 0;
   justify-content: end;
@@ -107,7 +110,7 @@ nav button {
 }
 
 .subtext {
-  width: 100vh;
+  width: 100rem;
   height: 40px;
   display: flex;
   list-style: none;
@@ -308,9 +311,12 @@ nav button {
   vertical-align: middle;
 }
 
-#java-container {
-  margin-top: 8%;
+@media (min-width:475px) { 
+  #java-container {
+    margin-top: 4%;
+  }
 }
+
 .mySlides {
   display: none;
 }
@@ -334,6 +340,8 @@ img {
   margin-right: auto;
   text-align: center;
   background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .text {
@@ -384,7 +392,6 @@ img {
   from {
       opacity: .4
   }
-
   to {
       opacity: 1
   }
@@ -569,8 +576,8 @@ tel {
 #return-to-top i {
   margin: 0;
   position: relative;
-  left: 0px;
-  top: 3px;
+  left: 0;
+  top: 0;
   font-size: 19px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
