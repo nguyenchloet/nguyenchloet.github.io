@@ -26,7 +26,7 @@ a {
     font-weight: 900px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
-      -webkit-text-stroke-width: .25px;
+      -webkit-text-stroke-width: .05px;
     background-image: url(/styles/black-clouds.jpg);
     background-size: auto;
     background-position: 0%;
@@ -250,7 +250,7 @@ nav button {
 }
 
 #project-container h3 {
-  margin: -6px 0;
+  margin: 0;
 }
 
 #project-container ul {
@@ -261,7 +261,7 @@ nav button {
   list-style: none;
   justify-content: space-evenly;
   margin: 0 0;
-  padding-left: 0px;
+  padding: 2px 0;
   font-size: 12px;
 }
 
@@ -278,7 +278,7 @@ nav button {
   display: flex;
   width: 95%;
   justify-content: space-between;
-  padding-left: 8px;
+  padding: 2px 8px;
 }
 
 #project-item-buttons button {
