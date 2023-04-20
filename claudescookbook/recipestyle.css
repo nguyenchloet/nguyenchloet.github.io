@@ -132,7 +132,7 @@ h1 {
 /* recipe container */
 h2 {
     /* font-family: "Fasthand", cursive; */
-    margin-top: -35px;
+    margin-top: -10px;
     margin-bottom: 10px;
 }
 
@@ -244,6 +244,8 @@ input[type="checkbox"] {
 .yield-div {
     display: flex;
     justify-content: center;
+    margin-left: -15px;
+
 }
 
 .yield-div strong {
