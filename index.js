@@ -1,12 +1,4 @@
-$(document).ready(function(){
-   $("#linkedin").hover(function(){
-     //$(this).css("background-color", "yellow");
-     }, function(){
-     //$(this).css("background-color", "pink");
-   });
- });
- 
- //dark mode toggle
+//dark mode toggle
 function darkModeToggle() {
   var element = document.body;
   element.classList.toggle("dark-mode");
@@ -19,7 +11,6 @@ else {
     modeImg.setAttribute('src', "./styles/lightmode.svg");
 }
 
-  
 }
 
  // code coach page carousel behavior
