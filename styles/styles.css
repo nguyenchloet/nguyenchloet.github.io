@@ -239,6 +239,8 @@ nav button {
   text-align: center;
   margin: 1% 0;
   padding: 2%;
+  background-color: #fff;
+  color: #000;
 }
 
 .project-item .img-div  {
@@ -342,6 +344,7 @@ img {
   margin-right: auto;
   text-align: center;
   background-color: #fff;
+  color: #000;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -501,7 +504,6 @@ input[type=submit]:hover {
   height: 95vh;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
   padding: 20px;
   margin-top: 30px;
   justify-content: center;
@@ -517,6 +519,8 @@ input[type=submit]:hover {
 .contact-form-container {
   background-color: #f2f2f2;
   padding: 5% 2%;
+  border-radius: 4px;
+
 }
 
 /* footer */
