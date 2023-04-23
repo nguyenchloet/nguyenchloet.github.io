@@ -4,11 +4,11 @@ function darkModeToggle() {
   element.classList.toggle("dark-mode");
 
   var modeImg = document.getElementById("mode-image");
-  if (modeImg.getAttribute('src') === "./styles/lightmode.svg") {
-    modeImg.setAttribute('src', "./styles/darkmode.svg");
+  if (modeImg.getAttribute('src') === "./resources/styles/lightmode.svg") {
+    modeImg.setAttribute('src', "./resources/styles/darkmode.svg");
 }
 else {
-    modeImg.setAttribute('src', "./styles/lightmode.svg");
+    modeImg.setAttribute('src', "./resources/styles/lightmode.svg");
 }
 
 }

@@ -26,7 +26,7 @@ a {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
       -webkit-text-stroke-width: .1px;
-    background-image: url(/styles/black-clouds.jpg);
+    background-image: url(/resources/styles/black-clouds.jpg);
     background-size: auto;
     background-position: 0%;
     font-size: 80px;
@@ -504,7 +504,7 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-input[type=submit] {
+button[type=submit] {
   background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #e6390a, #d61039, #c71585, #cf1261, #d61039, #de0d0d, #f79d03, #ffd700, #ffd700, #ffd700);
   color: white;
   padding: 12px 20px;
@@ -513,7 +513,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+button[type=submit]:hover {
   background: conic-gradient(from 90deg at 40% -25%, #fff, #fff);
   color: #000;
   border: 1px solid #d61039;
@@ -536,7 +536,7 @@ input[type=submit]:hover {
   height: fit-content;
   text-align: center;
   min-height: 8vh;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

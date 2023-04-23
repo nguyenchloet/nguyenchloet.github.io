@@ -8,18 +8,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles/styles.css">
-
+<!-- css -->
+        <link rel="stylesheet" href="./resources/styles/css/styles.css">
+<!-- google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap" rel="stylesheet">
-        
+<!-- font awesome -->
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-        
-
-
     </head>
     <body>
         <div id="site-top"></div>
@@ -29,7 +28,7 @@
                 <a href="#projects-page" id="p1">projects</a>
                 <a href="#contact-page">contact</a>
                 <button id="mode-button" onclick="darkModeToggle()">
-                    <img src="./styles/lightmode.svg" id="mode-image" height="25px">
+                    <img src="./resources/styles/lightmode.svg" id="mode-image" height="25px">
                 </button>
             </nav>
         </header>
@@ -82,7 +81,7 @@
     
             <div id="project-container">
                 <div class="project-item box shadow">
-                    <div class="img-div"><img src="/resources/ClaudesCookbookPreview.png" width="295px" height="150px"></div>
+                    <div class="img-div"><img src="./resources/project-previews/ClaudesCookbookPreview.png" width="295px" height="150px"></div>
                     <h3>My Grandfather's Recipes</h3>
                     <div>
                         <p id="project-item-description">Website displaying my (French chef) grandfather's recipes. JS used to update yield and scale recipes. Future upgrade to database. </p>
@@ -99,7 +98,7 @@
                 </div>
     
                 <div class="project-item box shadow">
-                    <div class="img-div"><img src="/resources/ShellSimPreview.png" width="295px" height="150px"></div>
+                    <div class="img-div"><img src="./resources/project-previews/ShellSimPreview.png" width="295px" height="150px"></div>
                     <h3>Custom UNIX shell</h3>
                     <div>
                         <p id="project-item-description">Custom UNIX command line shell written in C in VirtualBox environment. Supports reading user commands, process management and builtin command execution. </p>
@@ -114,7 +113,7 @@
                 </div>
     
                 <div class="project-item box shadow">
-                    <div class="img-div"><img src="/resources/WorkoutLogPhonePreview.jpg" width="295px" height="150px"></div>
+                    <div class="img-div"><img src="./resources/project-previews/WorkoutLogPhonePreview.jpg" width="295px" height="150px"></div>
                     <h3>Workout Log App</h3>
                     <div>
                         <p id="project-item-description">Application for strength-focused workout tracking written in React Native with MongoDB Realm back end for iOS and Android.&ensp;&ensp;<em>(in progress)</em></p>
@@ -141,67 +140,67 @@
                             <h2>Block-based Languages</h2>
                             <div class="mySlides fade" >
                                 <div class="numbertext">1 / 11</div>
-                                <img src="./code_imgs/ScratchAnimalRace.png" alt="Screen shot of Scratch Animal Race Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchAnimalRace.png" alt="Screen shot of Scratch Animal Race Game" style="width:250px">
                                 <div class="text">Animal Race</div>
                               </div>
                               
                               <div class="mySlides fade">
                                 <div class="numbertext">2 / 11</div>
-                                <img src="./code_imgs/ScratchBalloonDarts.png" alt="Screen shot of Scratch Balloon Darts Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchBalloonDarts.png" alt="Screen shot of Scratch Balloon Darts Game" style="width:250px">
                                 <div class="text">Balloon Darts</div>
                               </div>
                               
                               <div class="mySlides fade">
                                 <div class="numbertext">3 / 11</div>
-                                <img src="./code_imgs/ScratchBalloonPufferfish.png" alt="Screen shot of Scratch Balloon Pufferfish Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchBalloonPufferfish.png" alt="Screen shot of Scratch Balloon Pufferfish Game" style="width:250px">
                                 <div class="text">Pufferfish Pop</div>
                               </div>
   
                               <div class="mySlides fade">
                                   <div class="numbertext">4 / 11</div>
-                                  <img src="./code_imgs/ScratchDinoDodge.png" alt="Screen shot of Scratch Dino Dodge Game" style="width:250px">
+                                  <img src="./resources/code-previews/ScratchDinoDodge.png" alt="Screen shot of Scratch Dino Dodge Game" style="width:250px">
                                   <div class="text">Dino Dodge</div>
                               </div>
 
                               <div class="mySlides fade">
                                 <div class="numbertext">5 / 11</div>
-                                <img src="./code_imgs/ScratchFlyCatcher.png" alt="Screen shot of Scratch Fly Catcher Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchFlyCatcher.png" alt="Screen shot of Scratch Fly Catcher Game" style="width:250px">
                                 <div class="text">Fly Catcher</div>
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">6 / 11</div>
-                                <img src="./code_imgs/ScratchHoops.png" alt="Screen shot of Scratch Hoops Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchHoops.png" alt="Screen shot of Scratch Hoops Game" style="width:250px">
                                 <div class="text">Hoops</div>
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">7 / 11</div>
-                                <img src="./code_imgs/ScratchLavaRace.jpeg" alt="Screen shot of Scratch Lava Race Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchLavaRace.jpeg" alt="Screen shot of Scratch Lava Race Game" style="width:250px">
                                 <div class="text">Lava Race</div>
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">8 / 11</div>
-                                <img src="./code_imgs/ScratchSheepHerder.png" alt="Screen shot of Scratch SheepHerder Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchSheepHerder.png" alt="Screen shot of Scratch SheepHerder Game" style="width:250px">
                                 <div class="text">Sheep Herder</div>
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">9 / 11</div>
-                                <img src="./code_imgs/ScratchSportsQuiz.png" alt="Screen shot of Scratch Sports Quiz Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchSportsQuiz.png" alt="Screen shot of Scratch Sports Quiz Game" style="width:250px">
                                 <div class="text">Ultimate Sports Quiz</div>
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">10 / 11</div>
-                                <img src="./code_imgs/ScratchTracer.jpeg" alt="Screen shot of Scratch Tracer Snowflake Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchTracer.jpeg" alt="Screen shot of Scratch Tracer Snowflake Game" style="width:250px">
                                 <div class="text">Snowflake Tracer</div>
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">11 / 11</div>
-                                <img src="./code_imgs/ScratchUSAMap.png" alt="Screen shot of Scratch USA Map Game" style="width:250px">
+                                <img src="./resources/code-previews/ScratchUSAMap.png" alt="Screen shot of Scratch USA Map Game" style="width:250px">
                                 <div class="text">USA Interactive Map</div>
                             </div>
 
@@ -218,31 +217,34 @@
                                 <span class="dot"></span> 
                                 <span class="dot"></span> 
                             </div>
+                            <div>
+                                <a href="https://scratch.mit.edu/studios/33051541"><em>Coding Games in Scratch</em> Book Projects</a>
+                            </div>
                         </div>
 
                         <div class="slideshow-container" data-cycle="4000">
                             <h2>Python</h2>
                             <div class="mySlides fade" >
                                 <div class="numbertext">1 / 4</div>
-                                <img src="./code_imgs/TurtleRace.png" alt="Screen shot of Turtle Race Python game in Trinket.io" style="width:250px">
+                                <img src="./resources/code-previews/TurtleRace.png" alt="Screen shot of Turtle Race Python game in Trinket.io" style="width:250px">
                                 <div class="text">Turtle Race</div>
                               </div>
                               
                               <div class="mySlides fade">
                                 <div class="numbertext">2 / 4</div>
-                                <img src="./code_imgs/SpaceShooter.png" alt="Screen shot of Space Shooter Python game in Trinket.io" style="width:250px">
+                                <img src="./resources/code-previews/SpaceShooter.png" alt="Screen shot of Space Shooter Python game in Trinket.io" style="width:250px">
                                 <div class="text">Space Shooter</div>
                               </div>
                               
                               <div class="mySlides fade">
                                 <div class="numbertext">3 / 4</div>
-                                <img src="./code_imgs/CoinCollector.png" alt="Screen shot of Coin Collector Python game in Trinket.io" height="250px"> 
+                                <img src="./resources/code-previews/CoinCollector.png" alt="Screen shot of Coin Collector Python game in Trinket.io" height="250px"> 
                                 <div class="text">Coin Collector</div>
                               </div>
   
                               <div class="mySlides fade">
                                   <div class="numbertext">4 / 4</div>
-                                  <img src="./code_imgs/ChristmasTree.png" alt="Screen shot of Click-to-Decorate Christmas Tree Python game in Trinket.io" style="width:250px">
+                                  <img src="./resources/code-previews/ChristmasTree.png" alt="Screen shot of Click-to-Decorate Christmas Tree Python game in Trinket.io" style="width:250px">
                                   <div class="text">Click-To-Decorate Christmas Tree</div>
                               </div>
                             <div style="text-align:center">
@@ -260,7 +262,7 @@
                             <div class="mySlides fade" >
                                 <div class="numbertext">1 / 6</div>
                                 <a href="https://github.com/nguyenchloet/CaesarsCipherCpp">
-                                    <img src="./code_imgs/CaesarsCipher.png" alt="Screenshot of Caesar's Cipher C++" width="250px">
+                                    <img src="./resources/code-previews/CaesarsCipher.png" alt="Screenshot of Caesar's Cipher C++" width="250px">
                                     <div class="text">Caesar's Shift Cipher Encryption/Decryption/Brute-Force Solution</div>
                                 </a>
                               </div>
@@ -268,7 +270,7 @@
                               <div class="mySlides fade">
                                 <div class="numbertext">2 / 6</div>
                                 <a href="https://github.com/nguyenchloet/Battleship">
-                                    <img src="./code_imgs/Battleship.png" alt="Screenshot of Battleship Console Game C++" width="250px">
+                                    <img src="./resources/code-previews/Battleship.png" alt="Screenshot of Battleship Console Game C++" width="250px">
                                     <div class="text">Console Battleship</div>
                                 </a>
                               </div>
@@ -276,7 +278,7 @@
                               <div class="mySlides fade">
                                 <div class="numbertext">3 / 6</div>
                                 <a href="https://github.com/nguyenchloet/2048Game">
-                                    <img src="./code_imgs/2048TerminalExample.png" alt="Screenshot of 2048 Console Game C++" width="250px">
+                                    <img src="./resources/code-previews/2048TerminalExample.png" alt="Screenshot of 2048 Console Game C++" width="250px">
                                     <div class="text">Console 2048 Game</div>
                                 </a>
                               </div>
@@ -284,7 +286,7 @@
                               <div class="mySlides fade">
                                   <div class="numbertext">4 / 6</div>
                                   <a href="https://github.com/nguyenchloet/Sphynx/blob/main/sphynx.cpp">
-                                    <img src="./code_imgs/Sphynx.png" alt="Screenshot of Sphynx Console Game C++" width="250px">
+                                    <img src="./resources/code-previews/Sphynx.png" alt="Screenshot of Sphynx Console Game C++" width="250px">
                                     <div class="text">Console Sphynx Game</div>
                                 </a>
                               </div>
@@ -292,7 +294,7 @@
                               <div class="mySlides fade">
                                 <div class="numbertext">5 / 6</div>
                                 <a href="https://github.com/nguyenchloet/Mastermind/blob/main/Mastermindscreenshot.png">
-                                    <img src="./code_imgs/Mastermindscreenshot.png" alt="Screenshot of Mastermind Console Game C++" width="250px">
+                                    <img src="./resources/code-previews/Mastermindscreenshot.png" alt="Screenshot of Mastermind Console Game C++" width="250px">
                                     <div class="text">Mastermind Console Game</div>
                                 </a>
                             </div>
@@ -300,7 +302,7 @@
                             <div class="mySlides fade">
                                 <div class="numbertext">6 / 6</div>
                                 <a href="https://github.com/nguyenchloet/TicTacToe">
-                                    <img src="./code_imgs/TicTacToe.png" alt="Screenshot of TicTacToe Console Game C++" width="250px">
+                                    <img src="./resources/code-previews/TicTacToe.png" alt="Screenshot of TicTacToe Console Game C++" width="250px">
                                     <div class="text">Console TicTacToe Game</div>
                                 </a>
                             </div>
@@ -393,19 +395,19 @@
                 <div id="design-carousel-container">
                     <div id="design-carousel">
                         <div>
-                            <img src="./resources/sbt_final.png" height="150px">
+                            <img src="./resources/design-items/sbt_final.png" height="150px">
                         </div>
                         <div>
-                            <img src="./resources/JoanOfArcFootballClub.png" height="150px">
+                            <img src="./resources/design-items/JoanOfArcFootballClub.png" height="150px">
                         </div>
                         <div>
-                            <img src="./resources/WreathDesign.PNG" height="150px">
+                            <img src="./resources/design-items/WreathDesign.PNG" height="150px">
                         </div>
                         <div>
-                            <img src="./resources/nuts.png" height="150px">
+                            <img src="./resources/design-items/nuts.png" height="150px">
                         </div>
                         <div>
-                            <img src="./resources/olivia.png" height="150px">
+                            <img src="./resources/design-items/olivia.png" height="150px">
                         </div>
                     </div>
                 </div>
@@ -415,15 +417,15 @@
             <div class="contact-form-container">
                <a id="contact-page"></a>
                 <h2><em>Let's Connect!</em></h2>
-                <form action method="POST">
+                <form onsubmit="sendEmail(); reset(); return false;">
                     <div id="form-row">
                         <input type="text" id="name" name="first-name" placeholder="First name..">
                         <input type="text" id="name" name="last-name" placeholder="Last name..">
                     </div>
                     <input type="text" name="email" placeholder="Email address.." class="contact-option email">
-                    <textarea id="subject" name="message" placeholder="Your message.." style="height:200px"></textarea>
+                    <textarea id="subject" name="message" rows="6" placeholder="Your message.."></textarea>
                     <div class="submit-col">
-                        <input type="submit" name="submit" value="Submit">
+                        <button type="submit" name="submit">Submit</button>
                     </div>                  
                 </form>
             </div>
@@ -434,28 +436,46 @@
                         <div><cp><strong>&copy 2023 CTN</cp></strong></div>
                         <!--
                         <div class="footer-email">
-                            <img src="./styles/Email-Symbol-PNG-Transparent.png" alt="email icon" height="20px">
+                            <img src="./styles/icons/email-icon.png" alt="email icon" height="20px">
                             <span>nguyenchloet@gmail.com</span>
                         </div>
                         <div>
-                            <img src="./styles/phone-call-icon.png" alt="phone call icon" height="25px">
+                            <img src="./styles/icons/phone-icon.png" alt="phone call icon" height="25px">
                             <tel>(971) 204-5202</tel>
                         </div>
                          -->
                         <div id="github">
                             <a href="https://github.com/nguyenchloet">
-                                <img src="/styles/github-mark.png" alt="github icon link" height="35px">
+                                <img src="./resources/styles/icons/github-icon.png" alt="github icon link" height="35px">
                             </a>
                         </div>
                         <div id="linkedin">
                             <a href="https://www.linkedin.com/in/nguyenchloet/" class="headlink">
-                                <img src="/styles/linkedin-logo-linkedin-icon-transparent.png" alt="linkedin icon link" height="55px">
+                                <img src="./resources/styles/icons/linkedin-icon.png" alt="linkedin icon link" height="55px">
                             </a>
                         </div>
                         <div><a href="#site-top" id="return-to-top"><i class="icon-chevron-up"></i></a></div>
                         
                     </div>
             </footer>
-       <script src="index.js"></script>
+       <script src="./resources/js/index.js"></script>
+       <!-- form handler -->
+       <script src="https://smtpjs.com/v3/smtp.js"></script>
+       <script>
+            function sendEmail() {
+                Email.send({
+                    SecureToken: "3c63e812-a3cb-42db-9a95-2ceb1608c480",
+                    To : 'nguyenchloet@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "Contact Form Inquiry",
+                    Body : "Name: " + document.getElementById("name").value 
+                        + "<br> Email: " + document.getElementById("email").value
+                        + "<br> Message: " + document.getElementById("subject").value
+
+                }).then(
+                message => alert("Message Sent Successfully!")
+                );
+            }
+       </script>
     </body>
 </html>
