@@ -136,8 +136,7 @@ nav button {
   padding-top: 75px;
 }
 
-
-
+/* small screen resizing */
 @media (max-width:475px) { 
   #main-page ul {
     width: 100%;
@@ -153,6 +152,10 @@ nav button {
   }
   #project-item-description {
     font-size: 10px; 
+  }
+  .footer-wrap {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 
@@ -222,7 +225,7 @@ nav button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  vertical-align: top;
+  vertical-align: middle;
   padding-bottom: 40px;
 }
 
@@ -234,7 +237,7 @@ nav button {
   display: flex;
   flex-direction: column;
   width: 45vh;
-  height: 35vh;
+  height: auto;
   border-radius: 10px;
   text-align: center;
   margin: 1% 0;
@@ -250,6 +253,8 @@ nav button {
 
 .project-item img {
   border-radius: 4px;
+  width: 100%;
+  height: 100%;
 }
 
 #project-container h3 {
@@ -315,6 +320,7 @@ nav button {
   vertical-align: middle;
 }
 
+/* add space at java-container top when screen is larger than 475px */
 @media (min-width:475px) { 
   #java-container {
     margin-top: 4%;
@@ -440,9 +446,34 @@ img {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
   padding: 5% 1%;
+  justify-content: space-evenly;
+  overflow-x: scroll;
 }
 
 /* contact form page */
+.contact-page {
+  width: 95%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 30px;
+  justify-content: center;
+  color: #000;
+}
+
+.contact-page h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  color: #bd1f83;
+}
+
+.contact-form-container {
+  background-color: #f2f2f2;
+  padding: 5% 2%;
+  border-radius: 4px;
+}
+
 #form-row {
   display: flex;
   flex-direction: row;
@@ -453,11 +484,16 @@ img {
   padding-right: 10px;
 }
 
+#form-row input:nth-child(2) {
+  margin-left: 2%;
+}
+
 #form-row #email {
   padding-left: 10px;
 }
 
 input[type=text], select, textarea {
+  font-family: 'Courier New', Courier, monospace;
   width: 100%; 
   padding: 12px;
   border: 1px solid #ccc; 
@@ -490,84 +526,46 @@ input[type=submit]:hover {
   float: right;
 }
 
-.submit-success {
-  display: none;
-  font-size: 14px;
-  color: rgb(0, 85, 0);
-  font-style: italic;
-  text-align: right;
-  padding-right: 25px;
-}
-
-.contact-page {
-  width: 95%;
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-top: 30px;
-  justify-content: center;
-  color: #000;
-}
-
-.contact-page h2 {
-  text-align: center;
-  padding-bottom: 10px;
-  color: #bd1f83;
-}
-
-.contact-form-container {
-  background-color: #f2f2f2;
-  padding: 5% 2%;
-  border-radius: 4px;
-
-}
-
 /* footer */
-footer {
-  background-color: inherit;
+.footer-wrap {
+  background-color: #fff;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  height: fit-content;
   text-align: center;
   min-height: 8vh;
-  font-size: 12px;
+  font-size: 1.2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
-footer div {
-    display: flex;
-    padding: 0 20px;
+.footer-email{
+  display: block;
+  margin: 0;
 }
 
-.footer-email{
-  margin: 0 auto;
-  max-width: 120px;
+.footer-email span {
+  display: none;
 }
 
 tel {
-    padding-left: 20px;
+  display: none;
 }
 
-#linkedin {
-  margin-top: -10px;
-}
 
-#github {
-  margin-top: -5px;
-}
-
+/* button to return to top of page */
 #return-to-top {
   color: inherit;
   bottom: 20px;
-  top: 20px;
+  top:420px;
   border: 2px solid #000;
   background-color: #ccc;
+  padding: 8px 15px;
   width: 30px;
-  height: 30px;
+  height: 20px;
   text-decoration: none;
   -webkit-border-radius: 35px;
   -moz-border-radius: 35px;

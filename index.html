@@ -2,6 +2,7 @@
     TODO:
         - add links to scratch and python project images
         - add Chewy hackathon project to projects
+        - add honeypot to form <input name="honeypot" class="visually-hidden" tabindex="-1" autocomplete="off"> from https://austingil.com/how-to-build-html-forms-right-security/
 -->
 
 <!DOCTYPE html>
@@ -16,6 +17,7 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+        
 
 
     </head>
@@ -413,43 +415,41 @@
             <div class="contact-form-container">
                <a id="contact-page"></a>
                 <h2><em>Let's Connect!</em></h2>
-                <form>
-                <div id="form-row">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name..">
-                    <label for="email-contact" id="email">Email</label>
-                    <input type="text" placeholder="Email address.." class="contact-option email">
-                </div>
-                    <textarea id="subject" name="subject" placeholder="Your message.." style="height:200px"></textarea>
-                    <div class="submit-col">
-                    <input type="submit" value="Submit">
-                <!--
-                    <div class="box-container">
-                    <div class="box shadow"></div>
+                <form action method="POST">
+                    <div id="form-row">
+                        <input type="text" id="name" name="first-name" placeholder="First name..">
+                        <input type="text" id="name" name="last-name" placeholder="Last name..">
                     </div>
-                -->
-                <p class="submit-success">Submitted!</p>
-              </div>
-            </form>  
+                    <input type="text" name="email" placeholder="Email address.." class="contact-option email">
+                    <textarea id="subject" name="message" placeholder="Your message.." style="height:200px"></textarea>
+                    <div class="submit-col">
+                        <input type="submit" name="submit" value="Submit">
+                    </div>                  
+                </form>
             </div>
            
           </div>
             <footer>
-                <div></div>
                     <div class="footer-wrap">   
                         <div><cp><strong>&copy 2023 CTN</cp></strong></div>
-                        <div>
-                            <div class="footer-email">nguyenchloet@gmail.com</div>
-                            <div><tel>(971) 204-5202</tel></div>
+                        <!--
+                        <div class="footer-email">
+                            <img src="./styles/Email-Symbol-PNG-Transparent.png" alt="email icon" height="20px">
+                            <span>nguyenchloet@gmail.com</span>
                         </div>
+                        <div>
+                            <img src="./styles/phone-call-icon.png" alt="phone call icon" height="25px">
+                            <tel>(971) 204-5202</tel>
+                        </div>
+                         -->
                         <div id="github">
                             <a href="https://github.com/nguyenchloet">
-                                <img src="/styles/github-mark.png" alt="github icon link" height="25px">
+                                <img src="/styles/github-mark.png" alt="github icon link" height="35px">
                             </a>
                         </div>
                         <div id="linkedin">
                             <a href="https://www.linkedin.com/in/nguyenchloet/" class="headlink">
-                                <img src="/styles/linkedin-logo-linkedin-icon-transparent.png" alt="linkedin icon link" height="35px">
+                                <img src="/styles/linkedin-logo-linkedin-icon-transparent.png" alt="linkedin icon link" height="55px">
                             </a>
                         </div>
                         <div><a href="#site-top" id="return-to-top"><i class="icon-chevron-up"></i></a></div>
