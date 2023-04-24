@@ -417,17 +417,27 @@
             <div class="contact-form-container">
                <a id="contact-page"></a>
                 <h2><em>Let's Connect!</em></h2>
-                <form onsubmit="sendEmail(); reset(); return false;">
-                    <div id="form-row">
-                        <input type="text" id="name" name="first-name" placeholder="First name..">
-                        <input type="text" id="name" name="last-name" placeholder="Last name..">
-                    </div>
-                    <input type="text" name="email" placeholder="Email address.." class="contact-option email">
-                    <textarea id="subject" name="message" rows="6" placeholder="Your message.."></textarea>
-                    <div class="submit-col">
-                        <button type="submit" name="submit">Submit</button>
-                    </div>                  
-                </form>
+                <form id="fs-frm contact-form" name="contact-form" accept-charset="utf-8" action="https://formspree.io/f/xnqylopj" method="post">
+                    <fieldset id="fs-frm-inputs">
+                      <label for="full-name">Full Name</label>
+                      <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+                      <label for="email-address">Email Address</label>
+                      <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+                      <label for="message">Message</label>
+                      <textarea rows="5" name="message" id="message"  placeholder="Your message..." required=""></textarea>
+                      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                      <input name="honeypot" class="visually-hidden" tabindex="-1" autocomplete="off">
+                    </fieldset>
+                    <input type="submit" value="Submit">
+                    <!-- Clear form on submit -->
+                    <script>
+                        window.onbeforeunload = () => {
+                            for(const form of document.getElementsByTagName('form')) {
+                                form.reset();
+                            }
+                        }   
+                    </script>
+                  </form>
             </div>
            
           </div>
@@ -459,23 +469,5 @@
                     </div>
             </footer>
        <script src="./resources/js/index.js"></script>
-       <!-- form handler -->
-       <script src="https://smtpjs.com/v3/smtp.js"></script>
-       <script>
-            function sendEmail() {
-                Email.send({
-                    SecureToken: "3c63e812-a3cb-42db-9a95-2ceb1608c480",
-                    To : 'nguyenchloet@gmail.com',
-                    From : document.getElementById("email").value,
-                    Subject : "Contact Form Inquiry",
-                    Body : "Name: " + document.getElementById("name").value 
-                        + "<br> Email: " + document.getElementById("email").value
-                        + "<br> Message: " + document.getElementById("subject").value
-
-                }).then(
-                message => alert("Message Sent Successfully!")
-                );
-            }
-       </script>
     </body>
 </html>

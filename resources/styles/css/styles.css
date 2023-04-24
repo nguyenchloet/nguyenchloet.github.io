@@ -474,25 +474,11 @@ img {
   border-radius: 4px;
 }
 
-#form-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+fieldset {
+  border: 0px solid transparent;
 }
 
-#form-row > * {
-  padding-right: 10px;
-}
-
-#form-row input:nth-child(2) {
-  margin-left: 2%;
-}
-
-#form-row #email {
-  padding-left: 10px;
-}
-
-input[type=text], select, textarea {
+input[type=text], input[type=email], select, textarea {
   font-family: 'Courier New', Courier, monospace;
   width: 100%; 
   padding: 12px;
@@ -504,16 +490,18 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-button[type=submit] {
+input[type=submit] {
   background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #e6390a, #d61039, #c71585, #cf1261, #d61039, #de0d0d, #f79d03, #ffd700, #ffd700, #ffd700);
   color: white;
   padding: 12px 20px;
+  margin: 0 14px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  float: right;
 }
 
-button[type=submit]:hover {
+input[type=submit]:hover {
   background: conic-gradient(from 90deg at 40% -25%, #fff, #fff);
   color: #000;
   border: 1px solid #d61039;
@@ -524,6 +512,10 @@ button[type=submit]:hover {
   flex-direction: column;
   width: 120px;
   float: right;
+}
+
+.visually-hidden {
+  display: none;
 }
 
 /* footer */
