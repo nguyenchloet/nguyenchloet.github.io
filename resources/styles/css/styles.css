@@ -320,6 +320,10 @@ nav button {
   vertical-align: middle;
 }
 
+#scratch-link {
+  margin-bottom: 20px;
+}
+
 /* add space at java-container top when screen is larger than 475px */
 @media (min-width:475px) { 
   #java-container {
@@ -359,9 +363,9 @@ img {
   background-color: #000;
   color: #f2f2f2;
   font-size: 15px;
-  padding: 8px 0;
+  padding: 10px 0;
   bottom: -35px;
-  margin: 0 50px;
+  margin: 0 49px;
 }
 
 .numbertext {
