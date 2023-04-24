@@ -524,7 +524,8 @@ input[type=submit]:hover {
 
 /* footer */
 .footer-wrap {
-  background-color: #fff;
+  background-color: inherit;
+  color: inherit;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -550,7 +551,6 @@ input[type=submit]:hover {
 tel {
   display: none;
 }
-
 
 /* button to return to top of page */
 #return-to-top {
