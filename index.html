@@ -2,7 +2,6 @@
     TODO:
         - add links to scratch and python project images
         - add Chewy hackathon project to projects
-        - add honeypot to form <input name="honeypot" class="visually-hidden" tabindex="-1" autocomplete="off"> from https://austingil.com/how-to-build-html-forms-right-security/
 -->
 
 <!DOCTYPE html>
@@ -217,7 +216,7 @@
                                 <span class="dot"></span> 
                                 <span class="dot"></span> 
                             </div>
-                            <div>
+                            <div id="scratch-link">
                                 <a href="https://scratch.mit.edu/studios/33051541"><em>Coding Games in Scratch</em> Book Projects</a>
                             </div>
                         </div>
@@ -426,6 +425,7 @@
                       <label for="message">Message</label>
                       <textarea rows="5" name="message" id="message"  placeholder="Your message..." required=""></textarea>
                       <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                      <!-- https://austingil.com/how-to-build-html-forms-right-security/ -->
                       <input name="honeypot" class="visually-hidden" tabindex="-1" autocomplete="off">
                     </fieldset>
                     <input type="submit" value="Submit">
