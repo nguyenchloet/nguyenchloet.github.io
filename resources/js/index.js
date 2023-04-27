@@ -1,19 +1,20 @@
-//dark mode toggle
+/* dark mode toggle */
 function darkModeToggle() {
   var element = document.body;
   element.classList.toggle("dark-mode");
 
+  var root = document.documentElement;
+
   var modeImg = document.getElementById("mode-image");
   if (modeImg.getAttribute('src') === "./resources/styles/lightmode.svg") {
     modeImg.setAttribute('src', "./resources/styles/darkmode.svg");
-}
-else {
-    modeImg.setAttribute('src', "./resources/styles/lightmode.svg");
+  }
+  else {
+      modeImg.setAttribute('src', "./resources/styles/lightmode.svg");
+  }
 }
 
-}
-
- // code coach page carousel behavior
+ /* code coach page carousel behavior */
 var slideshowContainers = document.getElementsByClassName("slideshow-container");
 var slideIndex = 0;
 
