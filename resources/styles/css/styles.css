@@ -125,6 +125,7 @@ nav button {
   font-size: 14px;
   background: linear-gradient(45deg, #fff, #393939);
   color: var(--primary);;
+  box-shadow: 4px 8px 6px -4px #bbb;
 }
 
 .subtext li:nth-child(even) {
@@ -207,7 +208,8 @@ nav button {
   background-color:  var(--primary);
   color: var(--secondary);
   border: 1px solid var(--secondary);
-  box-shadow:rgba(0, 0, 0, 0.9);
+  background: var(--primary);
+  box-shadow: 4px 8px 6px -4px var(--secondary);
 }
 
 .project-item .img-div  {
@@ -321,6 +323,8 @@ img {
   color: var(--secondary);
   margin-top: 10px;
   margin-bottom: 10px;
+  background: var(--primary);
+  box-shadow: 4px 8px 6px -4px var(--secondary);
 }
 
 .text {
@@ -442,6 +446,8 @@ img {
   background-color: #f2f2f2;
   padding: 5% 2%;
   border-radius: 4px;
+  background: #f2f2f2;
+  box-shadow: 4px 8px 6px -4px #bbb;
 }
 
 fieldset {
