@@ -186,7 +186,7 @@ nav button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 4% 4%;
+  margin: 4%;
 }
 
 .box {
@@ -195,7 +195,6 @@ nav button {
   background: #fff;
   transform: translate(0);
   transform-style: preserve-3d;
-  margin: 15% 0;
 }
 
 .box-row:nth-child(1) div:first-of-type, .box-row:nth-child(2) div:last-of-type {
