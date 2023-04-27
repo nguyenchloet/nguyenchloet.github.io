@@ -403,6 +403,7 @@ img {
   margin: 2% 1%;
   padding: 1%;
 }
+
 #design-carousel {
   display: flex;
   overflow-x: scroll;
@@ -411,6 +412,7 @@ img {
   padding: 5% 1%;
   justify-content: space-evenly;
   overflow-x: scroll;
+  justify-content: flex-start;
 }
 
 /* contact form page */
