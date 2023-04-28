@@ -411,6 +411,8 @@ img {
   border-bottom: 4px solid var(--secondary);
   margin: 2% 1%;
   padding: 1%;
+  background: var(--primary);
+  box-shadow: 4px 8px 6px -4px var(--secondary);
 }
 
 #design-carousel {
