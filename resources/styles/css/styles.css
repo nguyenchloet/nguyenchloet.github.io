@@ -10,12 +10,12 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
 }
 
 body {
   display: flex;
-  height: auto;
-  width: auto;
   flex-direction: column;
   -webkit-text-size-adjust: none;
   background-color: var(--primary);
@@ -72,24 +72,17 @@ a {
 
 .main-container {
     display: flex;
-    height: 100%;
-    width: 100%;
     padding-bottom: 2.5rem;
     flex-direction: column;
 }
 
 header {
   display: flex;
-  height: 10vh;
+  height: 50px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5% 8% 0;
-}
-
-nav {
-  display: flex;
-  margin-right: 0;
-  justify-content: end;
+  align-content: center;
+  padding: 2% 2% 2% 0;
 }
 
 nav a {
@@ -115,7 +108,7 @@ nav button {
 }
 
 .subtext {
-  width: 100rem;
+  width: 100%;
   height: 40px;
   display: flex;
   list-style: none;
@@ -135,7 +128,7 @@ nav button {
 #main-page {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   align-items: center;
   vertical-align: middle;
@@ -144,14 +137,18 @@ nav button {
 
 /* small screen resizing */
 @media (max-width:475px) { 
+  #main-page {
+    height: 75vh;
+  }
   #main-page ul {
-    width: 100%;
-    height: fit-content;
-    padding: 10% 0;
     flex-wrap: wrap;
   }
   #main-page li {
     flex-wrap: wrap;
+  }
+  #project-container {
+    display: flex;
+    flex-direction: column;
   }
   #project-container h3 {
     font-size: 16px;
@@ -159,9 +156,18 @@ nav button {
   #project-item-description {
     font-size: 10px; 
   }
+  .coaching-languages {
+    width: fit-content;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .contact-page {
+    height: 25vh;
+  }
   .footer-wrap {
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding-bottom: 6%;
   }
 }
 
@@ -184,6 +190,7 @@ nav button {
 /* project container */
 #project-container {
   display: flex;
+  width: 100%;
   height: fit-content;
   flex-direction: row;
   flex-wrap: wrap;
@@ -279,12 +286,13 @@ nav button {
 }
 /* code coach page */
 .coaching-languages {
-  width: 100%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   vertical-align: middle;
 }
+
 
 #scratch-link {
   margin-bottom: 20px;
@@ -504,7 +512,7 @@ input[type=submit]:hover {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: fit-content;
+  height: 8vh;
   text-align: center;
   min-height: 8vh;
   font-size: 1rem;
