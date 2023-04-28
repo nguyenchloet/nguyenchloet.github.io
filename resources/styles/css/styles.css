@@ -173,18 +173,16 @@ nav button {
 
 #roles {
   display: flex;
-  width: 100%;
   list-style: none;
-  text-align: center;
-  font-size: 18px;
-  margin-top: 0px;
-  justify-content: center;
+  text-align: left;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
 }
 
 #roles li {
   padding: 0 4px;
-  margin: 0 4px;
-
 }
 
 /* project container */
@@ -293,7 +291,6 @@ nav button {
   vertical-align: middle;
 }
 
-
 #scratch-link {
   margin-bottom: 20px;
 }
@@ -365,11 +362,6 @@ img {
 
 .active {
   background-color: #717171;
-}
-
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
 }
 
 .fade {
