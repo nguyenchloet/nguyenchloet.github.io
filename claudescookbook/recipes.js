@@ -129,7 +129,7 @@ function increaseIncrement() {
 
 
 function decreaseIncrement() {
-  currentIncrement > 0 ? currentIncrement -= .25 : 0;
+  currentIncrement > .25 ? currentIncrement -= .25 : .25;
   console.log("current increment:",currentIncrement);
   currentIncrements[index].innerHTML = currentIncrement;
 }
