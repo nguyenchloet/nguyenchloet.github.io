@@ -2,6 +2,9 @@
 //const ogYield = parseInt(document.getElementById('og-yield').value, 10);
 const ogYields = document.getElementsByClassName('og-yield');
 var currentYields = document.getElementsByClassName('yield-output');
+const ogIncrement = document.getElementsByClassName('og-increment');
+var currentIncrements = document.getElementsByClassName('increment-output');
+
 
 // get ingredient value (hidden) 
 var ingredientAmountList = document.getElementsByClassName('ingredient-amount');
@@ -9,6 +12,10 @@ var ingredientAmountList = document.getElementsByClassName('ingredient-amount');
 // get output ingredient span
 var outputAmountList = document.getElementsByClassName('output-amount');
 var index = 0;
+
+// get initial increment
+var currentIncrement = ogIncrement[index].innerHTML;
+
 
 // get ingredient values on page load
 window.onload = function() {
@@ -19,6 +26,10 @@ window.onload = function() {
 
   for (var i = 0; i < outputAmountList.length; i++) {
     outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML;
+  }
+
+  for (var i = 0; i < outputAmountList.length; i++) {
+    currentIncrements[i].innerHTML = ogIncrement[i].innerHTML;
   }
 }
 
@@ -36,7 +47,6 @@ function show( node ){
   node.addClass('active') 
       // hide previously active node
       .siblings().removeClass('active');
- 
 }
 
 // show previous recipe
@@ -68,13 +78,11 @@ next.on('click', function(e){
   }
 });
 
-
-
 // update yield based on click (step up)
 function increaseYield() {
   var currentYield = Number(currentYields[index].innerHTML);
   currentYield = isNaN(currentYield) ? 1 : currentYield;
-  currentYield++;
+  currentYield+=currentIncrement;
   // save new value
   currentYields[index].innerHTML = currentYield;
 
@@ -96,7 +104,7 @@ function decreaseYield() {
   // if value less than 1, set to 1 or keep as current value
   currentYield < 1 ? 1 : currentYield;
   // only decrease if value is greater than 1 (no zero)
-  currentYield > 1 ? currentYield-- : 1;
+  currentYield > 1 ? currentYield-=currentIncrement : 1;
   // save new value
   currentYields[index].innerHTML = currentYield;
   
@@ -110,3 +118,18 @@ function decreaseYield() {
   }
 }
 
+function increaseIncrement() {
+  //currentIncrement = isNaN(currentIncrement) ? 1 : currentIncrement;
+  currentIncrement < 1 ? currentIncrement += .25 : 1;
+
+  console.log("current increment:",currentIncrement);
+  currentIncrements[index].innerHTML = currentIncrement;
+
+}
+
+
+function decreaseIncrement() {
+  currentIncrement > 0 ? currentIncrement -= .25 : 0;
+  console.log("current increment:",currentIncrement);
+  currentIncrements[index].innerHTML = currentIncrement;
+}
