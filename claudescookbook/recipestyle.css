@@ -240,8 +240,22 @@ input[type="checkbox"] {
 .values-div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
 }
+
+
+/* On smaller screens, decrease width */
+@media only screen and (max-width: 400px) {
+    .values-div
+    {
+        flex-direction: column;
+    }
+    .yield-div, .increment-div {
+        margin-top: 20px;
+        justify-content: right;
+        padding-right: 30%;
+    }
+  }
 
 .og-yield, .og-increment {
     display: none;
@@ -250,11 +264,6 @@ input[type="checkbox"] {
 .yield-div, .increment-div {
     display: flex;
     justify-content: center;
-    margin-left: -15px;
-}
-
-.increment-div {
-    margin-left: 100px;
 }
 
 .yield-div strong, .increment-div strong {
