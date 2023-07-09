@@ -101,10 +101,10 @@ function increaseYield() {
 function decreaseYield() {
   var currentYield = Number(currentYields[index].innerHTML);
   currentYield = isNaN(currentYield) ? 1 : currentYield;
-  // if value less than 1, set to 1 or keep as current value
-  currentYield < 1 ? 1 : currentYield;
+  // if value less than 0, set to 0 or keep as current value
+  currentYield <= 0 ? 0 : currentYield;
   // only decrease if value is greater than 1 (no zero)
-  currentYield > 1 ? currentYield-=currentIncrement : 1;
+  ( currentYield > 0 && currentYield > currentIncrement) ? currentYield-=currentIncrement : 0;
   // save new value
   currentYields[index].innerHTML = currentYield;
   
