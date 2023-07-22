@@ -261,13 +261,19 @@ input[type="checkbox"] {
     display: none;
 }
 
-.yield-div, .increment-div {
+.yield-div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    margin-top: -35px;
 }
 
-.yield-div strong, .increment-div strong {
-    margin-top: 8px;
+.increment-div {
+    margin-bottom: -20px;
+}
+
+.increment-div p {
+    font-size: 12px;
 }
 
 .yield-output-container {

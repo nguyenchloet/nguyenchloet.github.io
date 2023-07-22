@@ -124,7 +124,6 @@ function increaseIncrement() {
 
   console.log("current increment:",currentIncrement);
   currentIncrements[index].innerHTML = currentIncrement;
-
 }
 
 
