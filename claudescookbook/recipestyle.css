@@ -2,10 +2,10 @@ body {
     width: 100%;
     height: 100%;
     /* background-image: url(img/castiron.jpeg); */
+    background-image: url(img/full_paper.png);
     background-color: #fff;
     color: #000;
     display: flex;
-    background-image: url(img/full_paper.png);
     background-position: -20px;
 }
 
@@ -132,7 +132,7 @@ h1 {
 /* recipe container */
 h2 {
     /* font-family: "Fasthand", cursive; */
-    margin-top: -10px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -156,11 +156,12 @@ main {
 }
 
 #recipe-container {
+    background-color: #fff;
+    background-image: url(img/full_paper.png);
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
-    margin-top: -10px;
     justify-content: center;
     text-align: center;
 }
@@ -248,13 +249,15 @@ input[type="checkbox"] {
 @media only screen and (max-width: 400px) {
     .values-div
     {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
     }
-    .yield-div, .increment-div {
-        margin-top: 20px;
-        justify-content: right;
-        padding-right: 30%;
-    }
+    .yield-div {
+        padding-right: 10%;
+    } 
+    .increment-div {
+        padding-right: 10%;
+    } 
   }
 
 .og-yield, .og-increment {
