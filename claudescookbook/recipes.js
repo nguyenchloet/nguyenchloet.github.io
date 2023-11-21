@@ -119,7 +119,9 @@ function decreaseYield() {
 }
 
 function increaseIncrement() {
-  currentIncrement += .25;
+  var parsedIncrement = parseFloat(currentIncrement) 
+  parsedIncrement += 0.25;
+  currentIncrement = parsedIncrement;
   currentIncrements[index].innerHTML = currentIncrement;
 }
 
