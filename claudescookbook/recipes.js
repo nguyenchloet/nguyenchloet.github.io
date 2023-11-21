@@ -82,7 +82,7 @@ next.on('click', function(e){
 function increaseYield() {
   var currentYield = Number(currentYields[index].innerHTML);
   currentYield = isNaN(currentYield) ? 1 : currentYield;
-  currentYield+=currentIncrement;
+  currentYield+=parseFloat(currentIncrement);
   // save new value
   currentYields[index].innerHTML = currentYield;
 
@@ -104,7 +104,7 @@ function decreaseYield() {
   // if value less than 0, set to 0 or keep as current value
   currentYield <= 0 ? 0 : currentYield;
   // only decrease if value is greater than 1 (no zero)
-  ( currentYield > 0 && currentYield > currentIncrement) ? currentYield-=currentIncrement : 0;
+  ( currentYield > 0 && currentYield > currentIncrement) ? currentYield-=parseFloat(currentIncrement) : 0;
   // save new value
   currentYields[index].innerHTML = currentYield;
   
