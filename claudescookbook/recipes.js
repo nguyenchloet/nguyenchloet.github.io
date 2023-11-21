@@ -91,7 +91,7 @@ function increaseYield() {
   for (var i = 0; i < outputAmountList.length; i++) {
     if (ingredientAmountList[i].innerHTML == "a") {
       ingredientAmountList[i].innerHTML = 1;
-      outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML; 
+      //outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML; 
     } 
     outputAmountList[i].innerHTML = currentYield/ogYields[index].innerHTML * ingredientAmountList[i].innerHTML;
   }
@@ -112,7 +112,7 @@ function decreaseYield() {
   for (var i = 0; i < outputAmountList.length; i++) {
     if (ingredientAmountList[i].innerHTML == "a") {
       ingredientAmountList[i].innerHTML = 1;
-      outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML; 
+      //outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML; 
     } 
     outputAmountList[i].innerHTML = currentYield/ogYields[index].innerHTML * ingredientAmountList[i].innerHTML;
   }
