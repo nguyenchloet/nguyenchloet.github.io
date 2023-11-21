@@ -119,16 +119,12 @@ function decreaseYield() {
 }
 
 function increaseIncrement() {
-  //currentIncrement = isNaN(currentIncrement) ? 1 : currentIncrement;
-  currentIncrement < 1 ? currentIncrement += .25 : 1;
-
-  console.log("current increment:",currentIncrement);
+  currentIncrement += .25;
   currentIncrements[index].innerHTML = currentIncrement;
 }
 
 
 function decreaseIncrement() {
   currentIncrement > .25 ? currentIncrement -= .25 : .25;
-  console.log("current increment:",currentIncrement);
   currentIncrements[index].innerHTML = currentIncrement;
 }
