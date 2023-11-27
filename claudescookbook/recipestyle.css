@@ -44,7 +44,7 @@ header {
 
 .nav-header {
     font-size: 18px;
-    width: 35vh;
+    width: 70vh;
 }
 
 .nav-ul a {
@@ -52,12 +52,11 @@ header {
 }
 
 .nav-ul-right {
-    width: 50vh;
+    width: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
-    margin-right: 5%;
 }
 
 .title-img {
@@ -190,6 +189,7 @@ h3 {
     text-align: center;
     font-size: 40px;
     background-color: #fff;
+    padding-top: 10px;
 }
 
 main {
