@@ -3,16 +3,12 @@
     padding: 0;
 }
   
-html,
-body {
+html {
     height: 100%;
     width: 100%;
 }
 
 body {
-    /* background-image: url(img/lartculinarefrancais.jpeg); */
-    /* background-repeat: repeat; */
-    /* background-size: cover; */
     display:flex;
     flex-direction: column;
     justify-content: right;
@@ -24,9 +20,11 @@ h1 {
 }
 
 h2 {
+    color: #fff;
+    background-color: #3E5479;
+    border-top: 4px solid #71829D;
+    border-bottom: 4px solid#71829D;
     padding: 2% 0;
-    border-top: 4px solid rgb(214,214,214);
-    border-bottom: 4px solid rgb(214,214,214);
 }
 
 /* header */
@@ -64,15 +62,15 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: fit-content;
+    width: 100%;
 }
 
 .about-main {
-    background-color: rgb(231, 231, 231);
     display: flex;
     flex-direction: row;
-    height: 65vh;
-    align-items: center;
     height: fit-content;
+    align-items: center;
 }
 
 #sketch {
@@ -108,10 +106,10 @@ p {
 }
 
 footer {
-    color: #000;
+    color: #fff;
     position: fixed;
-    background-color: #eee;
-    border-top: 4px solid rgb(214, 214, 214);
+    background-color: #3E5479;
+    border-top: 4px solid #71829D;
     width: 100%;
     height: 2vh;
     padding-top: 1%;
@@ -127,13 +125,14 @@ footer {
 /* On smaller screens, decrease width */
 @media only screen and (max-width: 600px) {
     header {
+        width: 100%;
         background-position-x: 45%;
     }
     .nav-ul {
-        width: 100%;
+        margin-left: 2%;
     }
-    .body {
-        height: fit-content;
+    .about-body p {
+        padding: 1% 8%;
     }
     .about-main {
         flex-direction: column;
