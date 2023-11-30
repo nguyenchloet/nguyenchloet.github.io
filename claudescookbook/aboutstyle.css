@@ -9,6 +9,8 @@ html {
 }
 
 body {
+    height: 100%;
+    width: 100%;
     display:flex;
     flex-direction: column;
     justify-content: right;
@@ -59,14 +61,18 @@ header {
 }
 
 .about-body {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
     height: fit-content;
-    width: 100%;
+    width: fit-content;
 }
 
 .about-main {
+    width: 90%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     height: fit-content;
@@ -123,7 +129,7 @@ footer {
 }
 
 /* On smaller screens, decrease width */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 666px) {
     header {
         width: 100%;
         background-position-x: 45%;
@@ -132,7 +138,8 @@ footer {
         margin-left: 2%;
     }
     .about-body p {
-        padding: 1% 8%;
+        margin: auto;
+        padding: auto;
     }
     .about-main {
         flex-direction: column;

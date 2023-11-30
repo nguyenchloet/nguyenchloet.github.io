@@ -57,6 +57,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
+    padding-right: 1%;
 }
 
 .title-img {
