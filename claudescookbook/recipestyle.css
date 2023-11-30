@@ -52,7 +52,7 @@ header {
 }
 
 .nav-ul-right {
-    width: 20vh;
+    width: 25vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,14 +82,16 @@ h1 {
 }
 
 #sketch {
+    width: 100%;
+    height: 90.5vh;
     display: flex;
     justify-content: center;
-    padding-top: 5%;
-    height: 76vh;
+    align-items: center;
 }
 
 #sketch img {
     border-radius: 1%;
+    height: 76vh;
 }
 
 /* navigation buttons */
@@ -267,6 +269,10 @@ ul .list {
     list-style-position: inside;
 }
 
+.direction::marker {
+    font-weight: bold;
+}
+
 .list-container {
     text-align: left;
 }
@@ -297,18 +303,23 @@ input[type="checkbox"] {
 
 /* On smaller screens, decrease width */
 @media only screen and (max-width: 400px) {
+    .nav-ul {
+        width: 100%;
+        justify-content: space-between;
+
+    }
+    .nav-header {
+        width: 100%;
+    }
     .values-div
     {
         flex-direction: row;
         justify-content: center;
     }
-    .yield-div {
-        padding-right: 10%;
-    } 
     .increment-div {
-        padding-right: 10%;
+        padding-left: 5%;
     } 
-  }
+}
 
 .og-yield, .og-increment {
     display: none;
