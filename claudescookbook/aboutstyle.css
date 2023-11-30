@@ -72,6 +72,7 @@ header {
     flex-direction: row;
     height: 65vh;
     align-items: center;
+    height: fit-content;
 }
 
 #sketch {
@@ -106,21 +107,7 @@ p {
     padding: 1% 2%;
 }
 
-@media (max-width: 600px) {
-    body {
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
-    }
-    img {
-        max-width: 250px;
-    }
-    #right {
-        width: 100%;
-    }
-  }
-
-  footer {
+footer {
     color: #000;
     position: fixed;
     background-color: #eee;
@@ -135,4 +122,23 @@ p {
     justify-content: center;
     font-size: 12px;
     align-content: center;
+}
+
+/* On smaller screens, decrease width */
+@media only screen and (max-width: 600px) {
+    header {
+        background-position-x: 45%;
+    }
+    .nav-ul {
+        width: 100%;
+    }
+    .body {
+        height: fit-content;
+    }
+    .about-main {
+        flex-direction: column;
+    }
+    img {
+        padding-top: 5%;
+    }
 }
