@@ -49,33 +49,30 @@ function show( node ){
       .siblings().removeClass('active');
 }
 
-// show previous recipe
-prev.on('click', function(e){
-  // prevent scrolling to top
-  e.preventDefault(); 
+// Show previous recipe
+prev.on('click', function(e) {
+  e.preventDefault();
 
-  var previousNode = recipes.filter('.active').prev();
+  var activeRecipe = recipes.filter('.active');
+  var previousNode = activeRecipe.prev('.recipe-item');
+
+  if (!previousNode.length) return;
+
   show(previousNode);
-  index > 0 ? index-- :  0;
-
-  // refresh values to original yield when previous recipe shown
-  for (var i = 0; i < outputAmountList.length; i++) {
-    outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML;
-  }
+  index = recipes.index(previousNode);
 });
 
-// show next recipe
-next.on('click', function(e){
-  // prevent scrolling to top
-  e.preventDefault(); 
-  var nextNode = recipes.filter('.active').next();
-  show(nextNode);
-  index < ogYields.length - 1 ? index++ : 0;
+// Show next recipe
+next.on('click', function(e) {
+  e.preventDefault();
 
-  // refresh values to original yield when next recipe shown
-  for (var i = 0; i < outputAmountList.length; i++) {
-    outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML;
-  }
+  var activeRecipe = recipes.filter('.active');
+  var nextNode = activeRecipe.next('.recipe-item');
+
+  if (!nextNode.length) return;
+
+  show(nextNode);
+  index = recipes.index(nextNode);
 });
 
 // update yield based on click (step up)
