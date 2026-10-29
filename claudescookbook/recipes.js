@@ -105,19 +105,16 @@ function increaseYield() {
 
   // Update only ingredients in the active recipe
   activeRecipe.find('.ingredient').each(function() {
-    var amountElement = $(this).find('.ingredient-amount');
-    var outputElement = $(this).find('.output-amount');
+  var ingredient = $(this);
+
+  ingredient.find('.ingredient-amount').each(function() {
+    var amountElement = $(this);
+    var outputElement = amountElement.next('.output-amount');
     var originalAmount = amountElement.text().trim();
-
-    // Preserve nonnumeric amounts such as "a"
-    if (originalAmount === "a") {
-      outputElement.text("a");
-      return;
-    }
-
     var amount = Number(originalAmount);
 
-    // Scale numeric amounts only
+    if (!outputElement.length) return;
+
     if (Number.isFinite(amount) && originalYield > 0) {
       var scaledAmount = amount * currentYield / originalYield;
       outputElement.text(Number(scaledAmount.toFixed(3)));
@@ -125,6 +122,7 @@ function increaseYield() {
       outputElement.text(originalAmount);
     }
   });
+});
 }
 
 // update yield based on click (step down)
@@ -144,7 +142,10 @@ function decreaseYield() {
   var currentIncrement = parseFloat(incrementElement.text());
 
   // Ensure current yield is a valid number
-  currentYield = isNaN(currentYield) ? 1 : currentYield;
+  if (!Number.isFinite(currentYield) ||
+      !Number.isFinite(originalYield) ||
+      !Number.isFinite(currentIncrement) ||
+      originalYield <= 0) return;
  
   // Decrease the yield by the increment value, ensuring it doesn't go below zero
   currentYield = Math.max(1, currentYield - currentIncrement);
@@ -154,13 +155,16 @@ function decreaseYield() {
 
   // Update only ingredients in the active recipe
   activeRecipe.find('.ingredient').each(function() {
-    var amountElement = $(this).find('.ingredient-amount');
-    var outputElement = $(this).find('.output-amount');
-    var originalAmount = amountElement.text().trim();
+  var ingredient = $(this);
 
+  ingredient.find('.ingredient-amount').each(function() {
+    var amountElement = $(this);
+    var outputElement = amountElement.next('.output-amount');
+    var originalAmount = amountElement.text().trim();
     var amount = Number(originalAmount);
-    
-    // Scale numeric amounts only
+
+    if (!outputElement.length) return;
+
     if (Number.isFinite(amount) && originalYield > 0) {
       var scaledAmount = amount * currentYield / originalYield;
       outputElement.text(Number(scaledAmount.toFixed(3)));
@@ -168,17 +172,38 @@ function decreaseYield() {
       outputElement.text(originalAmount);
     }
   });
+});
 }
 
 function increaseIncrement() {
-  var parsedIncrement = parseFloat(currentIncrement) 
-  parsedIncrement += 0.25;
-  currentIncrement = parsedIncrement;
-  currentIncrements[index].innerHTML = currentIncrement;
+  // Find the currently displayed recipe
+  var activeRecipe = recipes.filter('.active');
+  if (!activeRecipe.length) return;
+
+  // Get this recipe's increment display
+  var incrementElement = activeRecipe.find('.increment-output');
+  var currentIncrement = Number(incrementElement.text());
+
+  if (!Number.isFinite(currentIncrement)) return;
+
+  // Increase by 0.25
+  currentIncrement += 0.25;
+  incrementElement.text(Number(currentIncrement.toFixed(2)));
 }
 
 
 function decreaseIncrement() {
-  currentIncrement > .25 ? currentIncrement -= .25 : .25;
-  currentIncrements[index].innerHTML = currentIncrement;
+  // Find the currently displayed recipe
+  var activeRecipe = recipes.filter('.active');
+  if (!activeRecipe.length) return;
+
+  // Get this recipe's increment display
+  var incrementElement = activeRecipe.find('.increment-output');
+  var currentIncrement = Number(incrementElement.text());
+
+  if (!Number.isFinite(currentIncrement)) return;
+
+  // Decrease by 0.25, with a minimum of 0.25
+  currentIncrement = Math.max(0.25, currentIncrement - 0.25);
+  incrementElement.text(Number(currentIncrement.toFixed(2)));
 }
