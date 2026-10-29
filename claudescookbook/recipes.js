@@ -129,23 +129,45 @@ function increaseYield() {
 
 // update yield based on click (step down)
 function decreaseYield() {
-  var currentYield = Number(currentYields[index].innerHTML);
+  // find currently displayed recipe yield and increment values
+  var activeRecipe = recipes.filter('.active');
+  if (!activeRecipe.length) return; // No active recipe found, exit the function
+
+  // find yield and increment values inside the active recipe
+  var currentYieldElement = activeRecipe.find('.yield-output');
+  var originalYieldElement = activeRecipe.find('.og-yield');
+  var incrementElement = activeRecipe.find('.increment-output');
+
+  // get current yield and increment values
+  var currentYield = Number(currentYieldElement.text());
+  var originalYield = Number(originalYieldElement.text());
+  var currentIncrement = parseFloat(incrementElement.text());
+
+  // Ensure current yield is a valid number
   currentYield = isNaN(currentYield) ? 1 : currentYield;
-  // if value less than 0, set to 0 or keep as current value
-  currentYield <= 0 ? 0 : currentYield;
-  // only decrease if value is greater than 1 (no zero)
-  ( currentYield > 0 && currentYield > currentIncrement) ? currentYield-=parseFloat(currentIncrement) : 0;
-  // save new value
-  currentYields[index].innerHTML = currentYield;
-  
-  // if yield increases and is not equal to original yield, update yield by (currentYield/ogYield * amount)
-  for (var i = 0; i < outputAmountList.length; i++) {
-    if (ingredientAmountList[i].innerHTML == "a") {
-      ingredientAmountList[i].innerHTML = 1;
-      //outputAmountList[i].innerHTML = ingredientAmountList[i].innerHTML; 
-    } 
-    outputAmountList[i].innerHTML = currentYield/ogYields[index].innerHTML * ingredientAmountList[i].innerHTML;
-  }
+ 
+  // Decrease the yield by the increment value, ensuring it doesn't go below zero
+  currentYield = Math.max(1, currentYield - currentIncrement);
+
+  // Update the yield display
+  currentYieldElement.text(currentYield);
+
+  // Update only ingredients in the active recipe
+  activeRecipe.find('.ingredient').each(function() {
+    var amountElement = $(this).find('.ingredient-amount');
+    var outputElement = $(this).find('.output-amount');
+    var originalAmount = amountElement.text().trim();
+
+    var amount = Number(originalAmount);
+    
+    // Scale numeric amounts only
+    if (Number.isFinite(amount) && originalYield > 0) {
+      var scaledAmount = amount * currentYield / originalYield;
+      outputElement.text(Number(scaledAmount.toFixed(3)));
+    } else {
+      outputElement.text(originalAmount);
+    }
+  });
 }
 
 function increaseIncrement() {
