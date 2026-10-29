@@ -392,6 +392,20 @@ input[type="checkbox"] {
     border-radius: 0 4px 4px 0; 
 }
 
+.reset-yield {
+    margin-left: 8px;
+    padding: 4px 8px;
+    background: #bfbfbf;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.reset-yield:hover {
+    background: #a6a6a6;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;

@@ -79,6 +79,79 @@ next.on('click', function(e) {
   index = recipes.index(nextNode);
 });
 
+function parseIngredientAmount(value) {
+  value = value.trim();
+
+  // Support common Unicode fractions
+  var unicodeFractions = {
+    '½': 0.5,
+    '⅓': 1 / 3,
+    '⅔': 2 / 3,
+    '¼': 0.25,
+    '¾': 0.75,
+    '⅛': 0.125,
+    '⅜': 0.375,
+    '⅝': 0.625,
+    '⅞': 0.875
+  };
+
+  if (unicodeFractions[value] !== undefined) {
+    return unicodeFractions[value];
+  }
+
+  // Support fractions such as 1/2 and 3/4
+  var fractionMatch = value.match(/^(\d+)\s*\/\s*(\d+)$/);
+  if (fractionMatch) {
+    var numerator = Number(fractionMatch[1]);
+    var denominator = Number(fractionMatch[2]);
+    return denominator === 0 ? NaN : numerator / denominator;
+  }
+
+  // Support mixed numbers such as 1 1/2
+  var mixedMatch = value.match(/^(\d+)\s+(\d+)\s*\/\s*(\d+)$/);
+  if (mixedMatch) {
+    var whole = Number(mixedMatch[1]);
+    var top = Number(mixedMatch[2]);
+    var bottom = Number(mixedMatch[3]);
+    return bottom === 0 ? NaN : whole + top / bottom;
+  }
+
+  // Support ordinary integers and decimals
+  return Number(value);
+}
+
+function formatIngredientAmount(value) {
+  if (!Number.isFinite(value)) return value;
+
+  var fractions = [
+    { value: 0, text: '' },
+    { value: 1 / 8, text: '⅛' },
+    { value: 1 / 4, text: '¼' },
+    { value: 1 / 3, text: '⅓' },
+    { value: 3 / 8, text: '⅜' },
+    { value: 1 / 2, text: '½' },
+    { value: 5 / 8, text: '⅝' },
+    { value: 2 / 3, text: '⅔' },
+    { value: 3 / 4, text: '¾' },
+    { value: 7 / 8, text: '⅞' },
+    { value: 1, text: '' }
+  ];
+
+  var whole = Math.floor(value);
+  var decimal = value - whole;
+  var closest = fractions.reduce(function(best, fraction) {
+    return Math.abs(fraction.value - decimal) <
+      Math.abs(best.value - decimal) ? fraction : best;
+  });
+
+  if (Math.abs(closest.value - decimal) < 0.015) {
+    return (whole || closest.text === '' ? whole : '') +
+      (whole && closest.text ? ' ' : '') + closest.text || '0';
+  }
+
+  return Number(value.toFixed(3)).toString();
+}
+
 // update yield based on click (step up)
 function increaseYield() {
   // find currently displayed recipe yield and increment values
@@ -112,13 +185,13 @@ function increaseYield() {
     var amountElement = $(this);
     var outputElement = amountElement.next('.output-amount');
     var originalAmount = amountElement.text().trim();
-    var amount = Number(originalAmount);
+    var amount = parseIngredientAmount(originalAmount);
 
     if (!outputElement.length) return;
 
     if (Number.isFinite(amount) && originalYield > 0) {
       var scaledAmount = amount * currentYield / originalYield;
-      outputElement.text(Number(scaledAmount.toFixed(3)));
+      outputElement.text(formatIngredientAmount(scaledAmount));
     } else {
       outputElement.text(originalAmount);
     }
@@ -162,18 +235,45 @@ function decreaseYield() {
     var amountElement = $(this);
     var outputElement = amountElement.next('.output-amount');
     var originalAmount = amountElement.text().trim();
-    var amount = Number(originalAmount);
+    var amount = parseIngredientAmount(originalAmount);
 
     if (!outputElement.length) return;
 
     if (Number.isFinite(amount) && originalYield > 0) {
       var scaledAmount = amount * currentYield / originalYield;
-      outputElement.text(Number(scaledAmount.toFixed(3)));
+      outputElement.text(formatIngredientAmount(scaledAmount));
     } else {
       outputElement.text(originalAmount);
     }
   });
 });
+}
+
+// Reset active recipe to its original yield and ingredient amounts
+function resetYield() {
+  var activeRecipe = recipes.filter('.active');
+  if (!activeRecipe.length) return;
+
+  var originalYieldElement = activeRecipe.find('.og-yield');
+  var currentYieldElement = activeRecipe.find('.yield-output');
+  var originalYield = Number(originalYieldElement.text());
+
+  if (!Number.isFinite(originalYield) || originalYield <= 0) return;
+
+  currentYieldElement.text(originalYield);
+
+  activeRecipe.find('.ingredient').each(function() {
+    var ingredient = $(this);
+
+    ingredient.find('.ingredient-amount').each(function() {
+      var amountElement = $(this);
+      var outputElement = amountElement.next('.output-amount');
+
+      if (outputElement.length) {
+        outputElement.text(amountElement.text().trim());
+      }
+    });
+  });
 }
 
 function increaseIncrement() {
