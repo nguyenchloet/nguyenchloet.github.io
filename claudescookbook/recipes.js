@@ -56,8 +56,10 @@ prev.on('click', function(e) {
   var activeRecipe = recipes.filter('.active');
   var previousNode = activeRecipe.prev('.recipe-item');
 
-  if (!previousNode.length) return;
-
+  if (!previousNode.length) {
+      previousNode = recipes.last();
+  }
+  
   show(previousNode);
   index = recipes.index(previousNode);
 });
@@ -69,7 +71,9 @@ next.on('click', function(e) {
   var activeRecipe = recipes.filter('.active');
   var nextNode = activeRecipe.next('.recipe-item');
 
-  if (!nextNode.length) return;
+  if (!nextNode.length) {
+    nextNode = recipes.first();
+  }
 
   show(nextNode);
   index = recipes.index(nextNode);
