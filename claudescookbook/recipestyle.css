@@ -339,11 +339,12 @@ input[type="checkbox"] {
 
 .yield-output-container {
     width: 100px;
-    height: 30px;
+    height: 28px;
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
     margin-left: 10px;
+    margin-bottom: 6px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     border-radius: 4px; 
@@ -351,7 +352,7 @@ input[type="checkbox"] {
 
 .increment-output-container {
     width: 100px;
-    height: 30px;
+    height: 28px;
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
@@ -365,11 +366,17 @@ input[type="checkbox"] {
     display: inline-block;
     background: #bfbfbf;
     border: 2px solid black;
-    width: 30px;
-    height: 28px;
+    width: 33px;
+    height: 32px;
     text-align: center;
-    padding-top: 2px;
+    padding: 0;
     margin: -2px;
+    font-family: inherit;
+    font-size: inherit;
+    color: black;
+    line-height: 28px;
+    cursor: pointer;
+    border-radius: 4px; 
 }
 
 .value-button:hover {
