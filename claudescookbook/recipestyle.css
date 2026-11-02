@@ -56,11 +56,15 @@ header {
     display: flex;
     border-top: 3px solid var(--border-color);
     border-bottom: 3px solid var(--border-color);
-    align-items: center;
+    align-items: center;    
 }
 
 .nav-menu {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
 }
 
 .nav-ul {
@@ -76,12 +80,13 @@ header {
 
 .nav-header {
     font-size: 18px;
-    max-width: none;
     padding-left: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-ul a {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .nav-ul-right {

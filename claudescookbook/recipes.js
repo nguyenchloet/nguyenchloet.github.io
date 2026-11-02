@@ -41,6 +41,23 @@ var recipes = $('.recipe-item');
 // set first recipe as active
 $('.recipes li:first').addClass('active');
 
+// Open a specific recipe when selected from the recipe index
+const recipeParam = new URLSearchParams(window.location.search).get("recipe");
+
+if (recipeParam !== null) {
+    const recipeIndex = Number.parseInt(recipeParam, 10);
+
+    if (
+        Number.isInteger(recipeIndex) &&
+        recipeIndex >= 0 &&
+        recipeIndex < recipes.length
+    ) {
+        const selectedRecipe = recipes.eq(recipeIndex);
+
+        show(selectedRecipe);
+        index = recipeIndex;
+    }
+}
 
 // show one recipe (specified node) at a time
 function show( node ){
