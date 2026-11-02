@@ -120,6 +120,8 @@ function parseIngredientAmount(value) {
   return Number(value);
 }
 
+
+// Format ingredient amount for display, using Unicode fractions where appropriate
 function formatIngredientAmount(value) {
   if (!Number.isFinite(value)) return value;
 
@@ -276,6 +278,7 @@ function resetYield() {
   });
 }
 
+// Increase the increment value for the active recipe
 function increaseIncrement() {
   // Find the currently displayed recipe
   var activeRecipe = recipes.filter('.active');
@@ -292,7 +295,7 @@ function increaseIncrement() {
   incrementElement.text(Number(currentIncrement.toFixed(2)));
 }
 
-
+// Decrease the increment value for the active recipe
 function decreaseIncrement() {
   // Find the currently displayed recipe
   var activeRecipe = recipes.filter('.active');
@@ -308,3 +311,60 @@ function decreaseIncrement() {
   currentIncrement = Math.max(0.25, currentIncrement - 0.25);
   incrementElement.text(Number(currentIncrement.toFixed(2)));
 }
+
+// Cooking Mode: keep the screen awake while cooking
+let cookingModeEnabled = false;
+let screenWakeLock = null;
+
+const cookingModeToggle = document.getElementById("cooking-mode-toggle");
+
+async function requestScreenWakeLock() {
+    if (!cookingModeEnabled || !("wakeLock" in navigator)) {
+        return;
+    }
+
+    try {
+        screenWakeLock = await navigator.wakeLock.request("screen");
+
+        screenWakeLock.addEventListener("release", () => {
+            screenWakeLock = null;
+        });
+
+    } catch (error) {
+        console.error("Could not activate screen wake lock:", error);
+        cookingModeEnabled = false;
+        cookingModeToggle.textContent = "Start Cooking Mode";
+        cookingModeToggle.setAttribute("aria-pressed", "false");
+    }
+}
+
+cookingModeToggle.addEventListener("click", async () => {
+    if (cookingModeEnabled) {
+        cookingModeEnabled = false;
+
+        if (screenWakeLock) {
+            await screenWakeLock.release();
+            screenWakeLock = null;
+        }
+
+        cookingModeToggle.setAttribute("aria-checked", "false");
+
+    } else {
+        if (!("wakeLock" in navigator)) {
+            cookingModeToggle.textContent = "Wake Lock Unsupported";
+            return;
+        }
+
+        cookingModeEnabled = true;
+        cookingModeToggle.setAttribute("aria-checked", "true");
+
+        await requestScreenWakeLock();
+    }
+});
+
+// Reacquire the wake lock if the user returns to the page
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && cookingModeEnabled && !screenWakeLock) {
+        requestScreenWakeLock();
+    }
+});
