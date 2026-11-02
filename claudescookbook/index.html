@@ -20,10 +20,22 @@
                     <ul class="nav-ul">
                         <li class="nav-header"><strong>Claude's Cookbook</strong></p></li>
                         <ul class="nav-ul-right">
-                            <li><a href="#recipes">Recipes</a></li>
                             <!-- <li><a href="about.html">About</a></li> -->
                             <!-- <li>Search</li> -->
-                             <button id="theme-toggle" aria-label="Switch to dark mode">☾</button>
+                            <li class="cooking-mode-control">
+                                <button
+                                    id="cooking-mode-toggle"
+                                    class="toggle-switch"
+                                    type="button"
+                                    role="switch"
+                                    aria-checked="false"
+                                    aria-label="Cooking Mode"
+                                >
+                                    <span class="toggle-knob"></span>
+                                </button>
+                                <span>Cooking Mode<br><small>(Keep Screen On)</small></span>
+                            </li> 
+                            <button id="theme-toggle" aria-label="Switch to dark mode">☾</button>
                         </ul>
                     </ul>
                 </nav>

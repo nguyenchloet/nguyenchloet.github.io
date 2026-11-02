@@ -54,23 +54,30 @@ header {
     height: 8vh;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     border-top: 3px solid var(--border-color);
     border-bottom: 3px solid var(--border-color);
     align-items: center;
+}
+
+.nav-menu {
+    width: 100%;
 }
 
 .nav-ul {
     display: flex;
     flex-direction: row;
     list-style: none;
+    align-items: center;
     justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-header {
     font-size: 18px;
-    width: 70vh;
+    max-width: none;
+    padding-left: 20px;
 }
 
 .nav-ul a {
@@ -78,12 +85,16 @@ header {
 }
 
 .nav-ul-right {
-    width: 25vh;
+    width: auto;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     list-style: none;
-    padding-right: 1%;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 .title-img {
@@ -491,13 +502,60 @@ footer {
     color: var(--text-color);
 }
 
+/* Theme toggle button */ 
 #theme-toggle {
     background: none;
     border: 1px solid var(--border-color);
     color: var(--text-color);
-    border-radius: 50%;
+    border-radius: 18px;
+    padding: 0;
     width: 36px;
     height: 36px;
-    font-size: 20px;
+    font-size: 14px;
     cursor: pointer;
+}
+
+/* Cooking mode toggle button */
+.cooking-mode-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.toggle-switch {
+    width: 42px;
+    height: 24px;
+    border: none;
+    border-radius: 12px;
+    background: #b8b8b8;
+    padding: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.toggle-knob {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    transform: translateX(0);
+    transition: transform 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch[aria-checked="true"] {
+    background: #66845f;
+}
+
+.toggle-switch[aria-checked="true"] .toggle-knob {
+    transform: translateX(20px);
+}
+
+.cooking-mode-control small {
+    font-size: 10px;
+    color: var(--accent-color);
 }
