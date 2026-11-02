@@ -21,8 +21,9 @@
                         <li class="nav-header"><strong>Claude's Cookbook</strong></p></li>
                         <ul class="nav-ul-right">
                             <li><a href="#recipes">Recipes</a></li>
-                            <li><a href="about.html">About</a></li>
+                            <!-- <li><a href="about.html">About</a></li> -->
                             <!-- <li>Search</li> -->
+                             <button id="theme-toggle" aria-label="Switch to dark mode">☾</button>
                         </ul>
                     </ul>
                 </nav>
@@ -82,7 +83,7 @@
                                         <li class="ingredient"><input type="checkbox">salt</li>
                                         <li class="ingredient"><input type="checkbox">pepper</li>
                                         <li class="ingredient"><input type="checkbox"><span class="ingredient-amount">a</span><span class="output-amount"></span>shot or two of worcestershire sauce (Lee and Perrin sauce)</li>
-                                        <li class="ingredient"><input type="checkbox"><span class="ingredient-amount">a</span><span class="output-amount"></span>shot or two of tobasco</li>
+                                        <li class="ingredient"><input type="checkbox"><span class="ingredient-amount">a</span><span class="output-amount"></span>shot or two of tabasco</li>
                                         <li class="ingredient"><input type="checkbox"><span class="ingredient-amount">a</span><span class="output-amount"></span>spoon of facultative Dijon mustard (more if you like it piquante)</li>
                                         <li class="ingredient"><input type="checkbox"><span class="ingredient-amount">a</span><span class="output-amount"></span>spoon or two of cold water</li>
                                         <li class="ingredient"><input type="checkbox"><span class="ingredient-amount">2</span><span class="output-amount"></span>-<span class="ingredient-amount">3</span><span class="output-amount"></span>spoons or a good shot of olive oil</li>
@@ -997,7 +998,7 @@
                                         <li class="ingredient"><input type="checkbox">1 part spinach</li>
                                         <li class="ingredient"><input type="checkbox">1 part tarragon (You can use more spinach instead of tarragon due to price in the USA)</li>
                                         <li class="ingredient"><input type="checkbox">some mayonnaise</li>
-                                        <li class="ingredient"><input type="checkbox">a shot of tobasco</li>
+                                        <li class="ingredient"><input type="checkbox">a shot of tabasco</li>
                                         <li class="ingredient"><input type="checkbox">some lemon juice</li>
                                         <li class="ingredient"><input type="checkbox">some cinnamon</li>
                                         <li class="ingredient"><input type="checkbox">salt</li>
@@ -1123,6 +1124,34 @@
             </main>
         </div> <!-- End outline-->
         <script type='text/javascript' src='recipes.js'></script>
+        <script>
+            const themeToggle = document.getElementById("theme-toggle");
+
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+
+            function updateThemeButton() {
+                const currentTheme = document.documentElement.getAttribute("data-theme");
+
+                themeToggle.textContent = currentTheme === "dark" ? "☀" : "☾";
+                themeToggle.setAttribute(
+                    "aria-label",
+                    currentTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+                );
+            }
+
+            updateThemeButton();
+
+            themeToggle.addEventListener("click", () => {
+                const currentTheme = document.documentElement.getAttribute("data-theme");
+                const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+                document.documentElement.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+
+                updateThemeButton();
+            });
+        </script>
     </body>
     <footer>
         <p>Claude's Cookbook 2026</p>

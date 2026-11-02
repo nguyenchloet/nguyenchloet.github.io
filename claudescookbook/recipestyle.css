@@ -2,6 +2,26 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    color-scheme: light;
+    --page-bg: #f1eee7;
+    --content-bg: #faf8f4;
+    --text-color: #292722;
+    --accent-color: #555f69;
+    --border-color: #d8d0c5;
+    --button-bg: #e2ddd4;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+    --page-bg: #24272b;
+    --content-bg: #30343a;
+    --text-color: #eeeae2;
+    --accent-color: #8998ad;
+    --border-color: #555c65;
+    --button-bg: #454b53;
+}
   
 html {
     height: 100%;
@@ -12,8 +32,13 @@ body {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    color: #292722;
+    color: var(--text-color);
+    background-color: var(--page-bg);
     overflow-x: hidden;
+}
+
+main {
+        background-color: var(--page-bg);
 }
 
 .outline {
@@ -21,7 +46,7 @@ body {
 }
 
 a {
-    color: #292722;
+    color: var(--text-color);
 }
 
 /* header */
@@ -31,8 +56,8 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border-top: 3px solid#b7a69a;
-    border-bottom: 3px solid #b7a69a;
+    border-top: 3px solid var(--border-color);
+    border-bottom: 3px solid var(--border-color);
     align-items: center;
 }
 
@@ -126,11 +151,18 @@ h1 {
     margin: 0;
     width: 40px;
     height: 40px;
-    border: solid 3px #000;
-    background-color: #fff;
+    border: solid 3px var(--text-color);
+    background-color: var(--content-bg);
     border-radius: 100%;
     z-index: 1;
     transition: all .2s linear;
+}
+
+.left.arrow:before,
+.left.arrow:after,
+.right.arrow:before,
+.right.arrow:after {
+    background: var(--text-color);
 }
 
 .left.arrow:before {
@@ -204,9 +236,9 @@ h3 {
     font-family: 'Mrs Saint Delafield', cursive;
     text-align: center;
     font-size: 40px;
-    color:#000;
-    background-color: #f1eee7;
-    border-bottom: 3px solid #b7a69a;
+    color: var(--text-color);
+    background-color: var(--content-bg);
+    border-bottom: 3px solid var(--border-color);
 }
 
 /* Recipe area */
@@ -238,14 +270,19 @@ main {
     display: initial;
 }
 
+h3,
+ul .list {
+    background-color: var(--content-bg);
+}
+
 ul .list {
     display: flex;
     flex-direction: column;
-    background-color: #faf8f4;
+    background-color: var(--content-bg);
+    color: var(--text-color);
     vertical-align: text-top;
     padding-left: 2%;
     margin-left: -2%;
-
 }
 
 .list li {
@@ -350,16 +387,20 @@ input[type="checkbox"] {
     display: none;
 }
 
+.yield-output-container,
+.increment-output-container {
+    background-color: var(--content-bg);
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
 .yield-output-container {
     width: 100px;
     height: 28px;
     display: flex;
     flex-direction: row;
-    background-color: #ffffff;
     margin-left: 10px;
     margin-bottom: 6px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
     border-radius: 4px; 
 }
 
@@ -368,17 +409,14 @@ input[type="checkbox"] {
     height: 28px;
     display: flex;
     flex-direction: row;
-    background-color: #ffffff;
     margin-left: 10px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
     border-radius: 4px; 
 }
 
 .value-button {
-    display: inline-block;
-    background: #bfbfbf;
-    border: 2px solid black;
+    background-color: var(--button-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
     width: 33px;
     height: 32px;
     text-align: center;
@@ -386,7 +424,6 @@ input[type="checkbox"] {
     margin: -2px;
     font-family: inherit;
     font-size: inherit;
-    color: black;
     line-height: 28px;
     cursor: pointer;
     border-radius: 4px; 
@@ -423,7 +460,9 @@ input[type="checkbox"] {
 }
 
 .reset-yield:hover {
-    background: #a6a6a6;
+    background-color: var(--button-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -433,9 +472,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 footer {
-    color: #f8f6f1;
-    background-color: #555f69;
-    border-top: 4px solid #d8d0c5;
+    color: var(--content-bg);
+    background-color: var(--accent-color);
+    border-top: 3px solid var(--border-color);
     width: 100%;
     min-height: 2vh;
     box-sizing: border-box;
@@ -443,4 +482,22 @@ footer {
     text-align: center;
     font-size: 12px;
     margin-top: auto;
+}
+
+.value-button,
+.reset-yield {
+    background-color: var(--button-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    cursor: pointer;
 }
