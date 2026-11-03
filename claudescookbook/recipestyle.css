@@ -11,6 +11,7 @@
     --accent-color: #555f69;
     --border-color: #d8d0c5;
     --button-bg: #e2ddd4;
+    --surface-bg: #fffefa;
 }
 
 [data-theme="dark"] {
@@ -21,6 +22,7 @@
     --accent-color: #8998ad;
     --border-color: #555c65;
     --button-bg: #454b53;
+    --surface-bg: #383d44;
 }
   
 html {
