@@ -97,6 +97,8 @@
             const noResults = document.getElementById("no-results");
 
             let recipes = [];
+            let favoriteRecipes = [];
+
 
             fetch("index.html")
                 .then(response => response.text())
@@ -117,7 +119,17 @@
                     recipes.sort((a, b) =>
                         a.name.localeCompare(b.name)
                     );
+                    favoriteRecipes = JSON.parse(
+                        localStorage.getItem("claudesCookbookFavorites") || "[]"
+                    ).map(recipe => ({
+                        name: recipe.title,
+                        id: recipe.id,
+                        isFavorite: true
+                    }));
 
+                    recipes = recipes.concat(favoriteRecipes);
+
+                    recipes.sort((a, b) => a.name.localeCompare(b.name));
                     displayRecipes(recipes);
                 })
                 .catch(error => {
@@ -134,8 +146,9 @@
                     const link = document.createElement("a");
 
                     link.textContent = recipe.name;
-                    link.href = `index.html?recipe=${recipe.id}#recipes`;
-
+                    link.href = recipe.isFavorite
+                        ? `favorites.html#favorite-${recipe.id}`
+                        : `index.html?recipe=${recipe.id}#recipes`;
                     listItem.appendChild(link);
                     recipeList.appendChild(listItem);
                 });
