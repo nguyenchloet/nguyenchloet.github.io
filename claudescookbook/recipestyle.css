@@ -566,3 +566,155 @@ footer {
     font-size: 10px;
     color: var(--accent-color);
 }
+
+/* Add Recipe Form */
+
+#add-recipe-section {
+    margin: 10px 0 15px;
+    padding: 0;
+    color: var(--text-color);
+    background: transparent;
+    border: none;
+}
+
+
+#add-recipe-section h2 {
+    display: none;
+}
+
+#add-recipe-section button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    background: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#new-recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#new-recipe-form[hidden] {
+    display: none;
+}
+
+#new-recipe-form input,
+#new-recipe-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font: inherit;
+    color: var(--text-color);
+    background: var(--page-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+#new-recipe-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#add-recipe-section button {
+    padding: 9px 14px;
+    font: inherit;
+    color: var(--text-color);
+    background: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#recipe-form-error {
+    color: #b33a3a;
+    margin: 0;
+}
+
+/* User-created Recipe Cards */
+
+.user-recipe-card {
+    background: var(--surface-bg);
+    color: var(--text-color);
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.user-recipe-card img {
+    display: block;
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    margin: 20px auto;
+}
+
+.user-recipe-image-placeholder {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto;
+    background: var(--page-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.user-recipe-card li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    #add-recipe-section,
+    .user-recipe-card {
+        padding: 15px;
+    }
+}
+
+.recipe-image-container {
+    margin: 15px 0;
+}
+
+.recipe-image-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    background: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recipe-image-input {
+    display: none;
+}
+
+.recipe-image {
+    display: block;
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    margin: 15px auto;
+}
+
+.recipe-image[hidden] {
+    display: none;
+}
+
+.remove-recipe-image {
+    display: block;
+    margin: 8px auto;
+}
+
+.remove-recipe-image {
+    display: block;
+    margin: 8px auto;
+}
+
+.remove-recipe-image[hidden] {
+    display: none;
+}
