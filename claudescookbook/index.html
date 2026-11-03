@@ -46,7 +46,44 @@
             </div> -->
 
             <main id="recipes">
-                <h3>Recipes</h3>
+                <h3>Claude's Recipes</h3>
+                <section id="add-recipe-section">
+                    <h2>Add Claude's Recipe</h2>
+
+                    <button type="button" id="show-recipe-form">
+                        Add a Recipe
+                    </button>
+
+                    <form id="new-recipe-form" hidden>
+                        <label for="new-recipe-name">Recipe Name</label>
+                        <input type="text" id="new-recipe-name" required>
+
+                        <label for="new-recipe-yield">Yield</label>
+                        <input type="text" id="new-recipe-yield" required>
+
+                        <label for="new-recipe-ingredients">Ingredients</label>
+                        <textarea id="new-recipe-ingredients" required
+                            placeholder="Enter one ingredient per line"></textarea>
+
+                        <label for="new-recipe-directions">Directions</label>
+                        <textarea id="new-recipe-directions" required
+                            placeholder="Enter one step per line"></textarea>
+
+                        <label for="new-recipe-source">Source</label>
+                        <input type="text" id="new-recipe-source" required>
+
+                        <label for="new-recipe-image">Recipe Photo (optional)</label>
+                        <input
+                            type="file"
+                            id="new-recipe-image"
+                            accept="image/*"
+                        >
+
+                        <p id="recipe-form-error" role="alert"></p>
+
+                        <button type="submit">Save Recipe</button>
+                    </form>
+                </section>
                 <div id="recipe-container">
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                    
@@ -58,7 +95,20 @@
                         <ul class="recipe-items">
                             <li class="recipe-item">
                                 <h2>Steak Tartare</h2>
-                                <!-- <img src="" alt="photograph of steak tartar"> -->
+                                <div class="recipe-image-container">
+                                    <img class="recipe-image" alt="Steak Tartare" hidden>
+                                    <button type="button" class="remove-recipe-image" hidden>
+                                        Remove Photo
+                                    </button>
+                                    <label class="recipe-image-upload">
+                                        Add Photo
+                                        <input
+                                            type="file"
+                                            class="recipe-image-input"
+                                            accept="image/*"
+                                        >
+                                    </label>
+                                </div>
                                 <form class="values-div">
                                     <div class="yield-div">
                                         <strong>Yield:</strong>
@@ -1137,6 +1187,7 @@
             </main>
         </div> <!-- End outline-->
         <script type='text/javascript' src='recipes.js'></script>
+        <script src="user-recipes.js"></script>
         <script>
             const themeToggle = document.getElementById("theme-toggle");
 
